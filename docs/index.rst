@@ -13,7 +13,7 @@ Main features
 
 * Authorized users can, on the server, add information (including APRS objects) and manipulate how objects are displayed in a view shared by all users. For example choice of icons, use descriptive labels (tactical callsigns), tagging, hiding of unnecessary information, etc..
 
-* It can use various APRS sources, It can operate aa an APRS-IS server or APRS-router with filtering. It can operate as a igate.  
+* It can use various APRS sources, It can operate as an APRS-IS server or APRS-router with filtering. It can operate as a igate.  
 
 * Support for APRS messages and bulletins. Support for APRS telemetry (can show graphs)
 
