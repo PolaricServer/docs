@@ -2,7 +2,7 @@
 Concepts
 ********
 
-This chapter aims to give a guide to the architecture and main features of Polaric Server. 
+This chapter aims to give a overview of the architecture and main features of Polaric Server. 
 
 **Anything still unclear? Feedback is welcome!**
 
@@ -13,9 +13,9 @@ Software architecture overview
 
 .. image:: img/architecture1.jpg
 
-*Polaric-Webapp2* sets up a (Apache) webserver to serve the application itself (as a kind of a homepage); we call it the *'frontend-server'*. This can also function as a *cache* for map-tiles for various sources by using Apache and the `Mapcache plugin <http://www.mapserver.org/mapcache>`_. Mapcache can handle standard map-tile sources like WMS, WMTS, etc. The *Webapp2* client can use map-tile sources, but also vector sources like WFS, GPX, GeoJSON, etc. We can use the very rich capabilities of *OpenLayers* for this. 
+*Polaric-Webapp2* sets up a (Apache) webserver to serve the application itself (as a kind of a homepage); we call it the *'frontend-server'*. It can also function as a *cache* for map-tiles for various sources by using Apache and the `Mapcache plugin <http://www.mapserver.org/mapcache>`_. Mapcache can handle standard map-tile sources like WMS, etc. The *Webapp2* client can use map-tile sources, but also vector sources like WFS, GPX, GeoJSON, etc. We can use the very rich capabilities of *OpenLayers* for this. 
 
-It is also a client for the *Polaric-aprsd*; we call it the *'backend-server'*. It is a http server that runs on a different port than the frontend. *Polaric-aprsd* handles more dynamic position information, typically moving objects. It provides a REST API to clients for performing various operation, as well as a Websockets to push updates and notifications asynchronously. It offers an innovative way of filtering what the user sees (and how), and a way to use tags to help filtering and searching items. It offers user-login and role-based authorization.
+It is also a client for the *Polaric-aprsd*; the *'backend-server'*. It is a http server that may run on a different port than the frontend. *Polaric-aprsd* handles more dynamic position information, typically moving objects. It provides a REST API to clients for performing various operation, as well as a Websockets to push updates and notifications asynchronously. It offers an innovative way of filtering what the user sees (and how), and a way to use tags to help filtering and searching items. It offers user-login and role-based authorization.
 
 Aprsd is primarily an *APRS client* (and even an APRS igate if configured to do so); it can use a radio or the APRS-IS network to send or receive APRS packets. It is not limited to APRS; it can handle other datasources like e.g. AIS by using *plugins*. Plugins is a way to extend aprsd's functionality. A special and important plugin is the *database-plugin* which uses a PostgreSQL database (with PostGIS extension) to extend the capabilities of aprsd. It can store tracking-data and let users search historical trails or see snapshots at particular time-instants. It can store user-defined features and it can synchronize some information with other server-instances.  
 
@@ -30,8 +30,6 @@ Polaric Server is a free and open-source client/server application that supports
 * *Data Formats*: The application uses common data formats, like JSON for exchanging information. These formats can be easily parsed and processed by various systems, regardless of the programming language or platform used.
 
 * *Application Programming Interfaces (APIs)*: The server component exposes well-defined RESTful APIs that can be consumed by different clients. APIs provide a consistent and standardized way for applications to communicate and share data, facilitating interoperability.
-
-* *Internal API* with some support for running plugins in the server-application. Object-oriented software design with classes and interfaces.
     
 This means that alternative clients to the system is possible (and encouraged). The system can utilize open GIS data from various source through open protocols like WMS or WFS. Different instances of the backend-server can exchange and synchronize information and other applications can communicate with the aprsd backend server in order to share information. 
 
