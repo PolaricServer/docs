@@ -2,15 +2,15 @@
 Installing Polaric Server
 =========================
 
-This is a description how to install the *Polaric Server* software on a *Debian* based Linux platform. It consists of two main components: The APRS daemon (*polaric-aprsd*) and the Web application (*polaric-webapp2*). In addition there may be plugins. If you are unknown to Linux and Apache system administration, I recommend exploring this a little before attempting to install Polaric Server or that you get help from a friend. If you plan to put up a server permanently on the internet, you should know what you are doing, i.e. you should have some basic knowledge on internet security and firewall setup. I assume you login as *'root'* to be able to perform the installation ('`sudo su`') or prefix commands with *'sudo'*.
+This is a description how to install the *Polaric Server* software on a *Debian* based Linux platform. It consists of two main components: The APRS daemon (*polaric-aprsd*) and the Web application (*polaric-webapp2*). In addition there may be plugins. If you are unknown to Linux and Apache system administration, I recommend exploring this a little before attempting to install Polaric Server or that you get help from a friend. If you plan to put up a server permanently on the internet, you should know what you are doing, i.e. you should have some basic knowledge on internet security and firewall setup. I assume you can prefix commands with *'sudo'* or login as *'root'* to be able to perform the installation.
 
-The packages should work on Debian *stable* systems. From mid-june 2023 this will mean 'bookworm' (the current version of Polaric requires Java-17). It should probably also work on 'unstable' or 'testing' as well as recent Debian based distros like Ubuntu, Mint, Raspbian, Armbian, etc. Windows 10/11 with Linux subsystem (With Debian or Ubuntu) should probably work as well though I haven't tested much. 
+The packages should work on Debian *stable* systems. From mid-june 2023 this will mean 'bookworm'. 'Trixie' is expected to take over as *stable* in 2025. It should probably also work on 'unstable' or 'testing' as well as recent Debian based distros like Ubuntu, Mint, Raspbian, Armbian, etc. Windows 10/11 with Linux subsystem (With Debian or Ubuntu) should probably work as well though I haven't tested much. The current version of Polaric requires Java-17 or later. 
 
 .. note::
  It is important that the computer on which to install *Polaric Server* has a clock with correct time. It is recommended to install a *`ntp`* client ('`apt install ntp`'). *Polaric Server* can alternatively use a GPS to adjust the host computer's clock. 
 
-Debian Repository
------------------
+Deb Repository
+--------------
 
 We offer DEB packages to help you install the software. To get started you first need to add a package repository. Do as follows (as root)::
 
@@ -30,7 +30,7 @@ To re-load metadata from the repositories type the command::
 Installing the APRS daemon
 --------------------------
 
-The APRS daemon (polaric-aprsd) is a server program that processes APRS data (from/to APRS-IS and/or TNC) and presents it to the web-application (or it may be set up as an igate). It can be run as a standalone application (e.g. as a igate) or function as a backend server for the web-application and can respond to HTTP requests and deliver XML-data or HTML pages::
+The APRS daemon (polaric-aprsd) is a server program that processes APRS data (from/to APRS-IS and/or TNC) and presents it to the web-application (or it may be set up as an igate or APRS-IS server/router). It can be run as a standalone application (e.g. as a igate) or function as a backend server for the web-application and can respond to HTTP requests and deliver XML-data or HTML pages::
 
    apt install polaric-aprsd
 
@@ -55,7 +55,7 @@ The server can be restarted by issuing the command::
 Installing the web-application
 ------------------------------
 
-Webapp2 is the new client software. Source code is on `Github <https://github.com/PolaricServer/webapp2>`_. The deb package installs this automatically assuming that an aprsd instance is running on the same machine. It is possible to install it without aprsd (for advanced users). You can install the web-application component as follows::
+Webapp2 is the client software. Source code is on `Github <https://github.com/PolaricServer/webapp2>`_. The deb package installs this automatically assuming that an aprsd instance is running on the same machine. It is possible to install it without aprsd (for advanced users). You can install the web-application component as follows::
 
     apt install polaric-webapp2
 
@@ -95,7 +95,7 @@ Plugins are optional and easy to install. Plugins with available deb packages ar
    and configuring the database, but it may need some additional configuration.
  * **polaric-ais-plugin**. It implements integration of AIS datastream (over TCP). It depends on polaric-aprsd.
 
-I hope to be able to write documentation for the plugins soon. The database-plugin can be complex to setup and requires some database-knowledge. Feel free to contact me for assistance. I recommend to install the basic aprsd first and be sure that it is working before you add plugins.. 
+I hope to be able to write documentation for the plugins some time. The database-plugin can be complex to setup and requires some database-knowledge. Feel free to contact me for assistance. I recommend to install the basic aprsd first and be sure that it is working before you add plugins.. 
 
 If you want to write your own plugin, feel free to do so, and feel free to contact me for more information. 
  
