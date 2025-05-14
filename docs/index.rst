@@ -2,7 +2,7 @@
 Welcome to Polaric Server documentation!
 ========================================
 
-The *"Polaric Server"* is mainly a web based service to present live tracking information (APRS, AIS, etc) on maps and where the information is updated in realtime. It is originally targeted for use by radio amateurs in voluntary search and rescue service in Norway. It consists of a web application and a server program (APRS daemon). It runs on e.g. aprs.no as a online service on the internet, but we could also bring it with us out in the field in a portable computer, possibly with its own LAN, APRS modems and radios. *A goal is that it should be able to work without always being online with a good connection to the internet*.
+The *"Polaric Server"* is mainly a web based service to present live tracking information (APRS, AIS, etc) on maps and where the information is updated in realtime. It was originally targeted for use by radio amateurs in voluntary search and rescue service in Norway. It consists of a web application and a server program (APRS daemon). It runs on e.g. aprs.no as a online service on the internet, but we could also bring it with us out in the field in a portable computer, possibly with its own LAN, APRS modems and radios. *A goal is that it should be able to work without always being online with a good connection to the internet*.
 
 Main features
 -------------
@@ -13,6 +13,10 @@ Main features
 
 * Authorized users can, on the server, add information (including APRS objects) and manipulate how objects are displayed in a view shared by all users. For example choice of icons, use descriptive labels (tactical callsigns), tagging, hiding of unnecessary information, etc..
 
+* It can use various APRS sources, It can operate aa an APRS-IS server or APRS-router with filtering. It can operate as a igate.  
+
+* Support for APRS messages and bulletins. Support for APRS telemetry (can show graphs)
+
 * It can integrate live tracking information from various sources in addition to APRS. Examples include AIS and Datex II.
 
 * With the client, it is a GIS software that can use many open raster layer sources like e.g. WMS, WMTS, Google Maps or OpenStreetmap. It supports caching/storage of map tiles on server for offline use. It supports vector sources like WFS as well, and file formats like GPX or GeoJSON. It can seamlessly switch between multiple map projections.
@@ -20,8 +24,6 @@ Main features
 * Support for drawing features directly on the map. Support for drawing distance circles (bike wheel model).
 
 * To help dealing with information overload, servers can be set up with programmable filters and automatic tagging (sysadm can set up rules) to configure what items are displayed as well as how the items are displayed. For example we have full control over trail-lengths, use of labels, etc. Users can select from a set of predefined filters.
-
-* Support for APRS messages and bulletins. Support for APRS telemetry (can show graphs)
 
 * Can be set up with multiple server instances that can synchronize labels, tags, etc using authenticated APRS messages. Can operate offline with cached map-data. Suitable for small devices like e.g. Raspberry PI and mobile use.
 
