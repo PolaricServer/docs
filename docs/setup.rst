@@ -8,7 +8,7 @@ The most important settings can be done via the web-interface. It is a good idea
 
 You will be prompted twice for new password. You may also change your password using the webapp. 
 
-As soon as you have installed *webapp2*, and this is up and running, you can use your web-browser to see the map and some menus. You can click the icon which looks like a lock. Log on with username and password. If this succeeds, the window will show that you are logged in (and the lock icon will become green). To change your password, see the menu: *'Set/change password'*. Note that any user can change his/her own password. The superuser (*'admin'*) can change password of any other user as well. If you have superuser rights, you can click the main menu and select *'System admin'* and another menu pops up with the following choices: 
+After you have installed *webapp2*, and this is up and running, you can use your web-browser to see the map and some menus. You can click the icon which looks like a lock. Log on with username and password. If this succeeds, the window will show that you are logged in (and the lock icon will become green). To change your password, see the menu: *'Set/change password'*. Note that any user can change his/her own password. The superuser (*'admin'*) can change password of any other user as well. If you have superuser rights, you can click the main menu and select *'System admin'* and another menu pops up with the following choices: 
 
 * *Status info* (see info about running system and connected clients)
 * *User admin* (manage user-accounts)
@@ -45,7 +45,7 @@ The available Internet APRS channel types are:
 * ``APRSIS-SRV`` - Act as an APRS-IS server on a specific port so that e.g. igates can connect. 
 * ``ROUTER`` - A special channel that can be connected to APRSIS or APRSIS-SRV channels (with a filter for each) and act as APRS-router. A router-channel can be used as a primary channel. 
 
-APRS-IS servers and routers will be described more later. These channel types will be available from version 3.2 of Polaric Server. 
+*APRS-IS servers and routers will be described more later. These channel types will be available from version 3.2 of Polaric Server.* 
 
 One APRS-IS channel (aprsIS) is already set up and activated. The channel may for example use the server *`aprs.no`*, port 14585 which automatically delivers APRS traffic from Norway. Users in other countries should change the APRS-IS server. You should also add a *passcode* which will allow you to send data to APRS-IS as well. This code is generated based on your *callsign*. There are programs or services on the net that can generate a passcode for you if you have a valid callsign. You should also set a filter expression that says more specifically what you want from the APRS-IS server. The filter should be set to accept data from your geographical area of interest or types of data you need. Note that this filter is necessary if you use the general port 14580. `See more information <https://www.aprs-is.net/javAPRSFilter.aspx>`_ about server filters. 
 
