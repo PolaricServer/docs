@@ -43,7 +43,7 @@ The available Internet APRS channel types are:
 
 * ``APRSIS`` - Connect an APRS-IS server over the internet
 * ``APRSIS-SRV`` - Act as an APRS-IS server on a specific port so that e.g. igates can connect. 
-* ``ROUTER`` - A special channel that can be connected to APRSIS or APRSIS-SRV channels (with a filter for each) and act as APRS-router. A router-channel is typically used as a primary channel. 
+* ``ROUTER`` - A special channel that can be connected to APRSIS or APRSIS-SRV channels (with a filter for each) and act as APRS-router. A router-channel can be used as a primary channel. 
 
 APRS-IS servers and routers will be described more later. These channel types will be available from version 3.2 of Polaric Server. 
 
