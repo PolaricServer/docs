@@ -10,7 +10,7 @@ https://polaricserver.readthedocs.io
 
 And (redirect) from: 
 
-https://aprs.no/polaricserver
+https://doc.polaric.no
 
 Most of the earlier Dokuwiki based doc has now been moved over and updated. More documentation is underway. Still, it is considerable task to document everything well. User documentation would be nice but is not currently part of this.
 
