@@ -4,10 +4,10 @@ Welcome to Polaric Server documentation!
 
 The *"Polaric Server"* is mainly a web based service to present live tracking information (APRS, AIS, etc) on maps and where the information is updated in realtime. It was originally targeted for use by radio amateurs in voluntary search and rescue service in Norway. It consists of a web application and a server program (APRS daemon). It runs on e.g. aprs.no as a online service on the internet, but we could also bring it with us out in the field in a portable computer, possibly with its own LAN, APRS modems and radios. *A goal is that it should be able to work without always being online with a good connection to the internet*.
 
+It supports *digital sovereignty*: It is free and open source software. It has an open REST API for interoperability. An instance runs on aprs.no by the Norwegian Radio Relay League.  
+
 Main features
 -------------
-
-* Based on free and Open Source software. Open REST API for interoperability.
 
 * The user interface is a web application which allows users to browse maps, view and manipulate real-time tracking information using a standard web browser.
 
