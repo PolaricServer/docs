@@ -7,7 +7,7 @@ The default setup is to use HTTPS between the client and the server and to use t
 .. note:: 
     From version 3.0, the frontend webserver is configured with a `self-signed <https://en.wikipedia.org/wiki/Self-signed_certificate>`_ 
     certificate. This means that the webbrowser will not allow access before you explicitly make an exception for the certificate 
-    in question. If you plan to have many users, consider getting a certificate signed by a known CA. 
+    in question. If you plan to have many users, consider getting a certificate signed by a known CA. One example is *Lets Encrypt* which is free and easy to use. 
 
 Setting up the server with HTTPS
 --------------------------------
