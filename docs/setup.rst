@@ -49,6 +49,8 @@ The available Internet APRS channel types are:
 
 One APRS-IS channel (aprsIS) is already set up and activated. The channel may for example use the server *`aprs.no`*, port 14585 which automatically delivers APRS traffic from Norway. Users in other countries should change the APRS-IS server. You should also add a *passcode* which will allow you to send data to APRS-IS as well. This code is generated based on your *callsign*. There are programs or services on the net that can generate a passcode for you if you have a valid callsign. You should also set a filter expression that says more specifically what you want from the APRS-IS server. The filter should be set to accept data from your geographical area of interest or types of data you need. Note that this filter is necessary if you use the general port 14580. `See more information <https://www.aprs-is.net/javAPRSFilter.aspx>`_ about server filters. 
 
+.. image:: img/sc4.png
+
 The *radio* channel is not activated by default and can be removed if you don't need it. If you need to use a TNC or a radio with builtin APRS, you can configure and activate a radio channel.
 
 * **Type**: ``TNC2`` for TNC2 compatible TNC. Use this for Kenwood radios with builtin APRS. Use ``KISS`` for TNCs in KISS mode. It is also possible to use ``TCPKISS`` (KISS over internet). A channel should be deactivated before changing the type. After changing type, click 'Update' to get the right fields to fill in (you may also need to reload the page).
