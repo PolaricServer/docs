@@ -16,6 +16,9 @@ We offer DEB packages to help you install the software. To get started you first
 
     echo "deb http://aprs.no/debian-rep binary-dev/">> /etc/apt/sources.list
     
+.note::
+ The following method for setup of PGP keys works for versions prior to Trixie, not for Trixie. 
+
 You will need to install my cryptographic public key (PGP) to verify the authenticity of repository and the packages. You may do the following. This means that you trust packages signed with my key::
 
     apt install gnupg2 dirmngr
