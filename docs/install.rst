@@ -12,9 +12,9 @@ The packages should work on Debian *stable* systems. From mid-june 2023 this wil
 Deb Repository
 --------------
 
-We offer DEB packages to help you install the software. To get started you first need to add a package repository. Do as follows (as root)::
+We offer DEB packages to help you install the software. To get started you first need to add a package repository. Do as follows (as root) or edit the file directly::
 
-    echo "deb http://aprs.no/debian-rep polaric main">> /etc/apt/sources.list
+    echo "deb http://aprs.no/debian-rep polaric main" >> /etc/apt/sources.list
     
 .. note::
  The following method for setup of PGP keys works for versions prior to Trixie. For Trixie, some changes may be necessary. Updates are under way...
