@@ -14,10 +14,10 @@ Deb Repository
 
 We offer DEB packages to help you install the software. To get started you first need to add a package repository. Do as follows (as root)::
 
-    echo "deb http://aprs.no/debian-rep binary-dev/">> /etc/apt/sources.list
+    echo "deb http://aprs.no/debian-rep polaric main">> /etc/apt/sources.list
     
 .. note::
- The following method for setup of PGP keys works for versions prior to Trixie, not for Trixie. Updates are under way...
+ The following method for setup of PGP keys works for versions prior to Trixie. For Trixie, some changes may be necessary. Updates are under way...
 
 You will need to install my cryptographic public key (PGP) to verify the authenticity of repository and the packages. You may do the following. This means that you trust packages signed with my key::
 
