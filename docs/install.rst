@@ -23,7 +23,7 @@ You will need to install my cryptographic public key (PGP) to verify the authent
     gpg --export --armor 3E61003E24632585EB3DFE3D89E7229CFFD59B2F | tee /etc/apt/trusted.gpg.d/polaricserver.asc
 
 
-For better security it is recommended to move the polaricserver.asc file to /etc/apt/keyrings and change the line in sources.list to::
+For better security it is recommended to move the polaricserver.asc file to /etc/apt/keyrings (instead of /etc/apt/trusted.gpg.d) and change the line in sources.list to::
 
     deb [signed-by=/etc/apt/keyrings/polaricserver.asc] http://aprs.no/debian-rep polaric main" >> /etc/apt/sources.list
 
