@@ -25,7 +25,7 @@ You will need to install my cryptographic public key (PGP) to verify the authent
 
 For better security it is recommended to move the polaricserver.asc file to /etc/apt/keyrings (instead of /etc/apt/trusted.gpg.d) and change the line in sources.list to::
 
-    deb [signed-by=/etc/apt/keyrings/polaricserver.asc] http://aprs.no/debian-rep polaric main" >> /etc/apt/sources.list
+    deb [signed-by=/etc/apt/keyrings/polaricserver.asc] http://aprs.no/debian-rep polaric main
 
 To re-load metadata from the repositories type the command::
  
