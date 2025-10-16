@@ -9,3 +9,4 @@ This is a guide to more advanced configuration of aprsd. First a document on how
     secure
     filterscript
     configref
+    aprs-filters
