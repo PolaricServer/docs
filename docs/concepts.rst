@@ -1,6 +1,6 @@
-******** 
-Concepts
-********
+********************* 
+Overview and Concepts
+*********************
 
 This chapter aims to give a overview of the architecture and main features of Polaric Server. 
 
@@ -32,6 +32,13 @@ Polaric Server is a free and open-source client/server application that supports
 * *Application Programming Interfaces (APIs)*: The server component exposes well-defined RESTful APIs that can be consumed by different clients. APIs provide a consistent and standardized way for applications to communicate and share data, facilitating interoperability.
     
 This means that alternative clients to the system is possible (and encouraged). The system can utilize open GIS data from various source through open protocols like WMS or WFS. Different instances of the backend-server can exchange and synchronize information and other applications can communicate with the aprsd backend server in order to share information. 
+
+Offline operation
+-----------------
+
+**Polaric server** is designed to support *offline operation*. It should be able to operate without a connection to the internet, still available to clients on a LAN and still using the radio (typically APRS) for getting tracking-information locally or for messaging. A graceful degradation is possible when going offline, storing certain information locally. 
+
+(more to be written here)
 
 
 Supported geographical objects
