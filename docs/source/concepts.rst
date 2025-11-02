@@ -36,6 +36,30 @@ Polaric Server is an open client/server application that supports interoperabili
 This means that alternative clients to the system is possible (and encouraged). The system can utilize open GIS data from various source through open protocols like WMS or WFS. Different instances of the backend-server can exchange and synchronize information and other applications can communicate with the aprsd backend server in order to share information. 
 
 
+Offline operation
+-----------------
+
+**Polaric Server** is designed to support *offline operation* and is well-suited for deployment in field scenarios where internet connectivity is limited or unavailable. The system was originally developed for use by radio amateurs in voluntary search and rescue operations in Norway, where it can be brought into the field on portable computers with their own LAN, APRS modems, and radios.
+
+Key offline capabilities include:
+
+* **Local Network Operation**: The server can operate on a standalone LAN without internet access, serving web clients on the local network. Users can still access the full web interface and functionality through their browsers when connected to the local network.
+
+* **Map Tile Caching**: The system supports caching and local storage of map tiles using the Mapcache plugin. Map data can be pre-downloaded and stored locally, allowing full map browsing capabilities even when disconnected from external map tile services. This ensures that users can view and navigate maps without requiring access to WMS, WMTS, or other online map sources.
+
+* **Radio-Based Tracking**: The APRS daemon can continue to receive and display tracking information using radio communications (typically APRS). This allows the system to track and display positions of radio-equipped participants, vehicles, or assets in the field, completely independent of internet connectivity.
+
+* **Local Data Storage**: When the database plugin is installed, tracking data, trails, user-defined features, and other important information can be stored locally in a PostgreSQL database. This ensures that no data is lost during offline operation and provides full access to historical tracking information.
+
+* **Messaging Support**: APRS messaging and bulletins continue to function via radio, enabling communication between field participants even without cellular or internet connectivity.
+
+* **Graceful Degradation**: The system is designed to degrade gracefully when transitioning between online and offline modes. Features that require internet access (such as synchronization with other server instances or access to external data sources) become unavailable, but core functionality for tracking, mapping, and local operations remains fully operational.
+
+* **Multi-Instance Synchronization**: When connectivity is restored, multiple Polaric Server instances can synchronize labels, tags, and other data using authenticated APRS messages, ensuring eventual consistency across distributed deployments.
+
+The system is suitable for deployment on small devices such as Raspberry Pi, making it practical for mobile and field use where resources are constrained. This offline-first design philosophy ensures that critical tracking and mapping capabilities remain available regardless of network conditions, which is essential for emergency response, search and rescue operations, and other field activities.
+
+
 Supported geographical objects
 ------------------------------
 
