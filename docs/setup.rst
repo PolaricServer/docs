@@ -2,7 +2,7 @@
 Basic setup of Polaric APRSD
 ============================
 
-The most important settings can be done via the web-interface. It is a good idea to do this as soon as the server is up and running. You will need to log-in with *admin* (superuser) rights. The package initially comes with an admin-user (*‘admin’*) with password *‘polaric’*. You should of course change the password. You may use the command shell to do this::
+The most important settings can be done via the web-interface. It is a good idea to do this as soon as the server is up and running. You will need to log-in with *admin* (superuser) rights. The package initially comes with an admin-user (*‘admin’*) with password *‘polaric’*. **Important**: You should of course change this password as soon as possible. You may use the command shell to do this::
 
     sudo polaric-passwd admin
 
@@ -16,7 +16,7 @@ After you have installed *webapp2*, and this is up and running, you can use your
 * *Own pos config* (Use server as a position tracker)
 * *Channels config* (set up channels)
 * *Clear all items* (delete all position-items on the map).
-* *Synch nodes* (experimental: synchronisation between instances)
+* *Synch nodes* (experimental: synchronisation between instances). Only visible if you use the database-plugin. 
 
 Basic server settings
 ---------------------
