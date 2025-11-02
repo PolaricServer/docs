@@ -21,9 +21,9 @@ After you have installed *webapp2*, and this is up and running, you can use your
 Basic server settings
 ---------------------
 
-If you choose *'Server Config'* in the menu, you will now see a set of fields that can be filled in or changed. They are fairly self-explanatory. If you haven't set the callsign yet, now is a good time. 'NOCALL' is default but should set your own! The other settings are more optional. They are as follows:
+If you choose *'Server Config'* in the menu, you will now see a set of fields that can be filled in or changed. They are fairly self-explanatory. **Important:** If you haven't set the callsign yet, now is a good time. 'NOCALL' is default but should set your own! The other settings are more optional. They are as follows:
 
-* **Igate settings**. *Polaric-aprsd* is capable of running as a igate if required. If you set up the server with both internet and TNC/Radio it *may* be useful to activate the igate. Don't activate it if you don't need it. The igate use the channels which are marked as the primary RF and APRS-IS channels (in channel-setup). Make sure that these channels are correctly configured *before* you activate the igate.
+* **Igate settings**. *Polaric-aprsd* is capable of running as a igate if required. If you set up the server with both internet and TNC/Radio it *may* be useful to activate the igate. *Don't activate it if you don't need it*. The igate use the channels which are marked as the primary RF and APRS-IS channels (in channel-setup). Make sure that these channels are correctly configured *before* you activate the igate.
 
 * **Connection to another Polaric Server instance** (over APRS) for remote control and synchronization of SAR information (alias, tags, etc..). Servers to be connected, need to agree on a common secret (authentication key). *This is for advanced users*.
 
@@ -37,23 +37,23 @@ Configuration of data channels
 
 You see a list of channels and the running status of those. You may delete or add channels. Or you may click the edit-icon to see more detailed info and edit settings of the channel. 
 
-There are two different types of APRS-channels: *Radio*-channels and *Internet* (non-radio) channels. In addition, plugins may add *Non-APRS* channels, for example AIS. What fields to fill inn depends on the *type*. If clicking on the *edit* icon on the channel list, the relevant fields are shown. If the channel is active, it will also show some statistics like number of received packets. Up to two channels may be marked as *primary*: One Internet-channel and one radio-channel. This is needed when igate is activated or the server needs to send out things on APRS. Channels that are not primary are normally receive-only. 
+There are two different types of APRS-channels: *Radio*-channels and *Internet* (non-radio) channels. In addition, plugins may add *Non-APRS* channels, for example AIS. What fields to fill inn depends on the *type*. If clicking on the *edit* icon on the channel list, the relevant fields are shown. If the channel is active, it will also show some statistics like number of received packets. Up to two channels may be marked as *primary*: One Internet-channel and one radio-channel. This is needed when igate is activated or the server needs to send out things on APRS. Channels that are not primary are normally receive-only. Press '*New*' button to create a new channel (choose a name and type first), fill inn the necessary information. and press *'Add'* to save it. 
 
 The available Internet APRS channel types are: 
 
 * ``APRSIS`` - Connect to an APRS-IS server over the internet
-* ``APRSIS-SRV`` - Act as an APRS-IS server on a specific port so that e.g. igates can connect. 
-* ``ROUTER`` - A special channel that can be connected to APRSIS or APRSIS-SRV channels (with a filter for each) and act as APRS-router. A router-channel can be used as a primary channel. Packets sent to a primary router will be sent on all connected channels depending on filters. 
+* ``APRSIS-SRV`` - Act as an APRS-IS *server* on a specific port so that e.g. igates can connect. 
+* ``ROUTER`` - A special channel that can be connected to APRSIS or APRSIS-SRV channels (with a filter for each) and act as *APRS-router*. A router-channel can be used as a primary channel. Packets sent to a primary router will be sent on all connected channels depending on filters. Filters in the router-setup decide what go to the connected channels. For each connected channel (APRSIS or APRSIS-SRV) you can set up filters for incoming traffic, so it is possible to configure it as a kind if '*firewall*' for APRS-traffic. 
 
 *APRS-IS server and router channels are available from version 3.2 (or later) of Polaric Server.* 
 
-One APRS-IS channel (aprsIS) is already set up and activated. The channel may for example use the server *`aprs.no`*, port 14585 which automatically delivers APRS traffic from Norway. Users in other countries should change the APRS-IS server. You should also add a *passcode* which will allow you to send data to APRS-IS as well. This code is generated based on your *callsign*. There are programs or services on the net that can generate a passcode for you if you have a valid callsign. You should also set a filter expression that says more specifically what you want from the APRS-IS server. The filter should be set to accept data from your geographical area of interest or types of data you need. Note that this filter is necessary if you use the general port 14580. `See more information <https://polaricserver.readthedocs.io/en/latest/aprs-filters.html>`_ about server filters. In addition to the filter to be sent to the server we can also specify an internal filter for incoming packets. Use '*' to accept all, possibly with exception filters to block certain types of traffic. 
+One APRS-IS channel (aprsIS) is already set up and activated. The channel may for example use the server *`aprs.no`*, port 14580. There are also protected ports available for NRRL-members. 'Users in other countries should change the APRS-IS server to what is best suited in their area. You should also add a *passcode* which will allow you to send data to APRS-IS as well. This code can be generated based on your *callsign*. There are programs or services on the net that can generate a passcode for you if you have a valid callsign. You should also set a filter expression that says more specifically what you want from the APRS-IS server. The filter should be set to accept data from your geographical area of interest or types of data you need. Note that this filter is necessary if you use the general port 14580. `See more information <https://polaricserver.readthedocs.io/en/latest/aprs-filters.html>`_ about server filters. In addition to the filter to be sent to the server we can (from v.4.0) also specify an internal filter for incoming packets. Use '*' to accept all, possibly with exception filters to block unwanted traffic. 
 
 .. image:: img/sc4.png
 
 The *radio* channel is not activated by default and can be removed if you don't need it. If you need to use a TNC or a radio with builtin APRS, you can configure and activate a radio channel.
 
-* **Type**: ``TNC2`` for TNC2 compatible TNC. Use this for Kenwood radios with builtin APRS. Use ``KISS`` for TNCs in KISS mode. It is also possible to use ``TCPKISS`` (KISS over internet). A channel should be deactivated before changing the type. After changing type, click 'Update' to get the right fields to fill in (you may also need to reload the page).
+* **Type**: ``TNC2`` for TNC2 compatible TNC. Use this for Kenwood radios with builtin APRS. Use ``KISS`` for TNCs in KISS mode. It is also possible to use ``TCPKISS`` (KISS over internet). 
     
 * **Port**: Serial port or USB-serial port, as they are named in Linux. For instance, *`/dev/ttyS0`* would correspond to the COM1 serial port. If you plug in a USB serial converter or a radio with a USB plug, the port name will typically *`/dev/ttyUSB0`* or *`/dev/ttyACM0`* depending on what hardware is used. One way to find out what port-name is assigned to a USB device is to type *'dmesg'* in the command shell after the device is plugged in to look at the system log.
 
@@ -76,4 +76,4 @@ A smart-beaconing algorithm will be used when position changes. The frequency of
 To activate the settings
 ------------------------
 
-For each page of settings click the *'Update'* button to save your changes. Changes to channels will take effect immediately. Other changes may need a restart to become active. 
+For each page of settings click the *'Update'* button to save your changes (or *'Add'* to save a new channel). Changes to channels will take effect immediately. Other changes may need a restart to become active. 
