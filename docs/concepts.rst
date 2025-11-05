@@ -20,20 +20,6 @@ It is also a client for the *Polaric-aprsd*; the *'backend-server'*. It is a htt
 Aprsd is primarily an *APRS client* (and even an APRS igate if configured to do so); it can use a radio or the APRS-IS network to send or receive APRS packets. It is not limited to APRS; it can handle other datasources like e.g. AIS by using *plugins*. Plugins is a way to extend aprsd's functionality. A special and important plugin is the *database-plugin* which uses a PostgreSQL database (with PostGIS extension) to extend the capabilities of aprsd. It can store tracking-data and let users search historical trails or see snapshots at particular time-instants. It can store user-defined features and it can synchronize some information with other server-instances.  
 
 
-Interoperability and extensibility
-----------------------------------
-
-Polaric Server is a free and open-source client/server application that supports interoperability and extensibility. Interoperability refers to the ability of different systems, applications, or components to exchange information and work together effectively. Extensibility is the ability to add functionality with minimal need to change the core application. All this can be achieved through:
-
-* *Standardized Protocols*: The client and server communicate using standardized protocols, such as HTTP or WebSocket, which allow systems developed by different vendors or using different technologies to interact seamlessly.
-
-* *Data Formats*: The application uses common data formats, like JSON for exchanging information. These formats can be easily parsed and processed by various systems, regardless of the programming language or platform used.
-
-* *Application Programming Interfaces (APIs)*: The server component exposes well-defined RESTful APIs that can be consumed by different clients. APIs provide a consistent and standardized way for applications to communicate and share data, facilitating interoperability.
-    
-This means that alternative clients to the system is possible (and encouraged). The system can utilize open GIS data from various source through open protocols like WMS or WFS. Different instances of the backend-server can exchange and synchronize information and other applications can communicate with the aprsd backend server in order to share information. 
-
-
 Offline operation
 -----------------
 
@@ -56,6 +42,20 @@ Key offline capabilities include:
 * **Multi-Instance Synchronization**: Multiple Polaric Server instances can synchronize labels, tags, and other data using authenticated APRS messages, ensuring eventual consistency across distributed deployments.
 
 The system is suitable for deployment on small devices such as Raspberry Pi, making it practical for mobile and field use where resources are constrained. This offline-first design philosophy ensures that critical tracking and mapping capabilities remain available regardless of network conditions, which is essential for emergency response, search and rescue operations, and other field activities.
+
+
+Interoperability and extensibility
+----------------------------------
+
+Polaric Server is a free and open-source client/server application that supports interoperability and extensibility. Interoperability refers to the ability of different systems, applications, or components to exchange information and work together effectively. Extensibility is the ability to add functionality with minimal need to change the core application. All this can be achieved through:
+
+* *Standardized Protocols*: The client and server communicate using standardized protocols, such as HTTP or WebSocket, which allow systems developed by different vendors or using different technologies to interact seamlessly.
+
+* *Data Formats*: The application uses common data formats, like JSON for exchanging information. These formats can be easily parsed and processed by various systems, regardless of the programming language or platform used.
+
+* *Application Programming Interfaces (APIs)*: The server component exposes well-defined RESTful APIs that can be consumed by different clients. APIs provide a consistent and standardized way for applications to communicate and share data, facilitating interoperability.
+    
+This means that alternative clients to the system is possible (and encouraged). The system can utilize open GIS data from various source through open protocols like WMS or WFS. Different instances of the backend-server can exchange and synchronize information and other applications can communicate with the aprsd backend server in order to share information. 
 
 
 Supported geographical objects
