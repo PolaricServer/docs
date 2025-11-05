@@ -33,13 +33,13 @@ Key offline capabilities include:
 
 * **Radio-Based Tracking**: The APRS daemon can continue to receive and display tracking information using radio communications (typically APRS). This allows the system to track and display positions of radio-equipped participants, vehicles, or assets in the field, completely independent of internet connectivity.
 
+* **Multi-Instance Synchronization**: Multiple Polaric Server instances can synchronize labels, tags, and other data using authenticated APRS messages.
+
 * **Local Data Storage**: When the *database plugin* is installed, tracking data, user-defined features, and other important information can be stored locally in a PostgreSQL database. This ensures that no data is lost during offline operation and provides full access to historical tracking information. A *local-fist* philosophy is applied and some data can be automatically *replicated* with other instances when connectivity allows it, applying a *Strong Eventual Consistency* approach and CRDT techniques (still in an experimental stage). 
 
 * **Messaging Support**: APRS messaging and bulletins continue to function via radio, enabling communication between field participants even without cellular or internet connectivity.
 
 * **Graceful Degradation**: The system is designed to degrade gracefully when transitioning between online and offline modes. Features that require internet access (such as synchronization with other server instances or access to external data sources) become unavailable, but core functionality for tracking, mapping, and local operations remains fully operational.
-
-* **Multi-Instance Synchronization**: Multiple Polaric Server instances can synchronize labels, tags, and other data using authenticated APRS messages, ensuring eventual consistency across distributed deployments.
 
 The system is suitable for deployment on small devices such as Raspberry Pi, making it practical for mobile and field use where resources are constrained. This offline-first design philosophy ensures that critical tracking and mapping capabilities remain available regardless of network conditions, which is essential for emergency response, search and rescue operations, and other field activities.
 
