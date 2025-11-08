@@ -433,27 +433,16 @@ Filter by Q construct (APRS-IS routing information).
 
 **Q Constructs:**
 
-* ``qAC`` - Packet received from client over APRS-IS
-* ``qAX`` - Packet received from client over APRS-IS with no verification
-* ``qAU`` - Packet received from unverified client over APRS-IS
-* ``qAo`` - Packet received from verified client over APRS-IS
-* ``qAO`` - Packet received from verified client with object
-* ``qAS`` - Packet received from server
-* ``qAR`` - Packet received from bidirectional connection
-* ``qAZ`` - Packet from verified authentication server
-* ``qAI`` - Packet from verified igate
+* ``qAC`` - Verified login via bidirectonal port. Directly from client. 
+* ``qAX`` - Unverified login. Directly from client. Deprecated.
+* ``qAU`` - Direct via UDP.
+* ``qAo`` - Gated packet via client-only port.
+* ``qAO`` - Gated packet from RF without messaging. Non-gated packet via send-only port or indirect packet via client-only port.
+* ``qAS`` - Packet received from server without q-construct
+* ``qAR`` - Gated packet from RF (by an igate)
+* ``qAZ`` - Server-client command packet - server/client/igate callsign
+* ``qAI`` - Trace packet
 
-**Example**::
-
-    q/qAC
-
-Matches packets from APRS-IS clients.
-
-::
-
-    q/qA?
-
-Matches all Q constructs starting with qA.
 
 Channel Filter (C)
 ------------------
