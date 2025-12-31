@@ -78,10 +78,20 @@ RMNODE <ident>
     Announce that a node is closing down.
 
 
-Encryption
-----------
+Encryption of userids
+---------------------
 
-From v. 2.8 of *Polaric-aprsd* we may *encrypt* userids to comply with privacy regulations (GDPR). It is possible to specify in the setup for which other servers encryption is to be used. If on, the userid is encrypted using AES (128bit) where key is generated from the secret key (the same as used for authenticating messages). An initialisation vector is used, where the two first bytes are random and the third byte is the day of the year (modulo 256). These three bytes are used as a prefix on the encrypted userid. The resulting length is either 144 or 272 bits depending on the length of the id. The encrypted userid (prefixed) is encoded using base64.
+From v. 2.8 of *Polaric-aprsd* we may *encrypt* userids to comply with privacy requirements and regulations. It is possible to specify in the setup for which other servers this form of encryption is to be used. If on, the userid is encrypted using AES/CBC with PKCS5Padding. The AES-key is generated from the secret key (the same as used for authenticating messages). Use BKDF2 WithHmacSHA256. When encrypting userids, an initialisation vector is used, where the two first bytes are random and the third byte is the day of the year (modulo 256). These three bytes are used as a prefix on the encrypted userid. The resulting length is either 144 or 272 bits depending on the length of the id. The encrypted userid (prefixed) is encoded using base64.
 
-Before activating encryption for messages to be sent over amateur radio, be sure to check the HAM radio regulations in your country.
+For details, see source code utils/OldEncryption.java for a reference implementation. 
 
+Before configuring aprsd to encrypt encrypt for messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
+
+Encrypted APRS messages
+-----------------------
+
+From v. 4.1 of *Polaric-aprs* we may encrypt APRS messages to meet security requirements (confidentiality, integrity). The encryption sheme used also perform authentication of messages. It is possible to specify in the setup for which other servers this form of encryption is to be used. If on, the content of the message is encrypted using AES/GCM-SIV without padding. The AES-key is generated from the secret key (the same as used for authenticating messages). Use BKDF2 WithHmacSHA256. A *salt* should be used which is different for each service that use the secret key as a crypto-key where one is specific for APRS-message encryption.  When encrypting messaages, an initialisation vector (IV) is used starting with the message-id and padding the rest of the IV with null so that its length is always 12 bytes.
+
+For details, see source code utils/AesGcmSivEncryption.java for a reference implementation.
+
+If sensitive content, encryption should be used for messages to be sent worldwide over APRS-IS. Before configuring aprsd to encrypt encrypt for messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
