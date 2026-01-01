@@ -14,7 +14,7 @@ The format of a message is as follows::
  :<recipient><content>#<MAC>{<messsage-id>
 
 **recipient** 
-    (as defined in the APRS standard), callsign of the recipient padded with spaces so that its length is excactly 9 characters.
+    (as defined in the APRS standard), callsign of the recipient padded with spaces so that its length is excactly 10 characters.
 
 **content**
     The message to be sent
