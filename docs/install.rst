@@ -10,7 +10,7 @@ The packages should work on Debian *stable* systems. From mid-june 2023 this wil
  It is important that the computer on which to install *Polaric Server* has a clock with correct time. It is recommended to install a *`ntp`* client ('`apt install ntp`'). *Polaric Server* can alternatively use a GPS to adjust the host computer's clock. 
 
 .. note::
-  Please remember to maintain and update the *Polaric Server* installation now and then ('`apt update; apt upgrade`'). Running very old versions pose a security risk and you missing improvements and new features. The current version is 4.0. From 4.1 a check will be added and ancient versions will print a warning or refuse to run.
+  Please remember to maintain and update the *Polaric Server* installation now and then ('`apt update; apt upgrade`'). Running very old versions pose a security risk and you risk missing improvements and new features. The current version is 4.0. From 4.1 a check will be added and ancient versions will print a warning or refuse to run.
 
 Deb Repository
 --------------
