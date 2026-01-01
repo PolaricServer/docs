@@ -32,6 +32,8 @@ Encrypted APRS messages
 
 From v. 4.1 of *Polaric-aprs* we may encrypt APRS messages to meet security requirements (confidentiality, integrity). The encryption scheme used also perform authentication of messages. It is possible to specify in the setup for which other servers this form of encryption is to be used. If on, the content of the message is encrypted using AES/GCM-SIV without padding. The AES-key is generated from the secret key (may be the same as used for authenticating messages). We use BKDF2 with HmacSHA256. A *salt* is used and should be different for each service that use the secret key as a crypto-key where one is specific for APRS-message encryption. When encrypting messages, an initialisation vector (IV) is used starting with the *message-id* and padding the rest of the IV with null so that its length is always 12 bytes. The encrypted message is encoded using base64.
 
+For a reference implementation, see source code utils/AesGcmSivEncryption.java.
+
 The format of a message is as follows::
 
  :<recipient><content>{<messsage-id>
@@ -45,7 +47,7 @@ The format of a message is as follows::
 **messsage-id** 
     (as defined in the APRS standard). It should be unique for each message. Polaric APRSD use a sequence-number that is incremented with each message.
 
-For a reference implementation, see source code utils/AesGcmSivEncryption.java.
+
 
 If sensitive content, messages to be sent worldwide over APRS-IS should be encrypted! Before configuring your software-installation to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
 
@@ -53,5 +55,5 @@ If sensitive content, messages to be sent worldwide over APRS-IS should be encry
 Acknowledgment messages
 -----------------------
 
-On receipt of a message a node should respond with an ACK or REJ message as described in the APRS protocol to indicate if the message was successfully delivered to the application and that a command was successfully executed or not. The sender should retry a message if an acknowledgement is not received within a certain time (but there should be a limit on the number of retries, eg. 3). The recipient node should use the message-id to ensure that the same message is not delivered to the application more than once.
+On receipt of a message a node should respond with an ACK or REJ message as described in the APRS protocol to indicate if the message was successfully delivered to the application and that a command was successfully executed or not. The sender should retry a message if an acknowledgement is not received within a certain time (but there should be a limit on the number of retries, eg. 3). The recipient node should use the *message-id* to ensure that the same message is not delivered to the application more than once.
 
