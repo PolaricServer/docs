@@ -9,3 +9,4 @@ Interfaces and protocols
    cwebsocket   
    restapi2
    remotectl
+   aprs-messages
