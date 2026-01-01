@@ -26,12 +26,6 @@ The format of a message is as follows::
     (as defined in the APRS standard). It should be unique for each message. Polaric APRSD use a sequence-number that is incremented with each message.
 
 
-    
-Acknowledgment messages
------------------------
-
-On receipt of a message a node should respond with an ACK or REJ message as described in the APRS protocol to indicate if the message was successfully delivered to the application and that a command was successfully executed or not. The sender should retry a message if an acknowledgement is not received within a certain time (but there should be a limit on the number of retries, eg. 3). The recipient node should use the message-id to ensure that the same message is not delivered to the application more than once.
-
 
 Encrypted APRS messages
 -----------------------
@@ -54,3 +48,10 @@ The format of a message is as follows::
 For details, see source code utils/AesGcmSivEncryption.java.
 
 If sensitive content, messages to be sent worldwide over APRS-IS should be encrypted! Before configuring aprsd to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
+
+    
+Acknowledgment messages
+-----------------------
+
+On receipt of a message a node should respond with an ACK or REJ message as described in the APRS protocol to indicate if the message was successfully delivered to the application and that a command was successfully executed or not. The sender should retry a message if an acknowledgement is not received within a certain time (but there should be a limit on the number of retries, eg. 3). The recipient node should use the message-id to ensure that the same message is not delivered to the application more than once.
+
