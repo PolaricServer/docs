@@ -48,8 +48,8 @@ The format of a message is as follows::
     (as defined in the APRS standard). It should be unique for each message. Polaric APRSD use a sequence-number that is incremented with each message.
 
 
-
-If sensitive content, messages to be sent worldwide over APRS-IS should be encrypted! Before configuring your software-installation to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
+..note::
+ If sensitive content, messages to be sent worldwide over APRS-IS should be encrypted! Before configuring your software-installation to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
 
     
 Acknowledgment messages
