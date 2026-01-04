@@ -60,5 +60,6 @@ From v. 2.8 of *Polaric-aprsd* we may *encrypt* userids to comply with privacy r
 
 For details, see source code utils/OldEncryption.java. 
 
-Before configuring aprsd to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
+.. note::
+ Before configuring aprsd to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
 
