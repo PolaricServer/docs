@@ -42,7 +42,7 @@ The format of a message is as follows::
     (as defined in the APRS standard), callsign of the recipient padded with spaces so that its length is excactly 10 characters.
 
 **content**
-    Base64 representation of the ciphertext
+    Base64 representation of the ciphertext. Padding removed. 
 
 **messsage-id** 
     (as defined in the APRS standard). It should be unique for each message. Polaric APRSD use a sequence-number that is incremented with each message.
