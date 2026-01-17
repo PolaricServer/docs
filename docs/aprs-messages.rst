@@ -49,7 +49,7 @@ The format of a message is as follows::
 
 
 .. note::
- If sensitive content, messages to be sent worldwide over APRS-IS should be encrypted! Before configuring your software-installation to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
+ If sensitive content, messages to be sent worldwide over APRS-IS *should* be encrypted! Before configuring your software-installation to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
 
 Splitting long messages
 -----------------------
