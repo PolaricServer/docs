@@ -51,7 +51,14 @@ The format of a message is as follows::
 .. note::
  If sensitive content, messages to be sent worldwide over APRS-IS should be encrypted! Before configuring your software-installation to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. 
 
-    
+Splitting long messages
+-----------------------
+
+Messages that are too long can be split into parts. This is implemented only for encrypted messages. We can put a semicolon as the last character a part-message to indicate that the next part will come in the next message, with the next message-id. If the first character is a semicolon this indicates that this follows the previous message. Semicolon is not used in base64 encoding, so it is straightforward to handle. In the current version, we split messages into at most two parts. 
+
+The second part is acked right away when received. The first part is acked when reconstructed, decrypted and accepted by the application. 
+For example, a content "12345678" can be sent as two messages: "1234;}001" followed by ";5678}002". 
+
 Acknowledgment messages
 -----------------------
 
