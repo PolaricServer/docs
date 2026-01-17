@@ -54,10 +54,9 @@ The format of a message is as follows::
 Splitting long messages
 -----------------------
 
-Messages that are too long can be split into parts. This is implemented only for encrypted messages. We can put a semicolon as the last character a part-message to indicate that the next part will come in the next message, with the next message-id. If the first character is a semicolon this indicates that this follows the previous message. Semicolon is not used in base64 encoding, so it is straightforward to handle. In the current version, we split messages into at most two parts. 
+Encrypted messages are longer than plain-text messages because of the authentication-tag and base64-encoding. We therefore allow them to be split up and sent as parts. We put a semicolon as the last character a part-message to indicate that the next part should be expected in the following message (with the next message-id). If the *first* character is a semicolon this indicates that this follows the previous message. Semicolon is not used in base64-encoding, so it is straightforward to handle. In the current version, we split messages into at most two parts. 
 
-The second part is acked right away when received. The first part is acked when reconstructed, decrypted and accepted by the application. 
-For example, a content "12345678" can be sent as two messages: "1234;}001" followed by ";5678}002". 
+The second part is acked right away when received. The first part is acked when reconstructed, decrypted and accepted by the application (or rejected if decryption/authentication fails or the message for some other reason is not accepted). For example, a content "12345678" can be sent as two messages: "1234;}001" followed by ";5678}002". 
 
 Acknowledgment messages
 -----------------------
