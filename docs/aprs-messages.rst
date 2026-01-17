@@ -63,3 +63,9 @@ Acknowledgment messages
 
 On receipt of a message a node should respond with an ACK or REJ message as described in the APRS protocol to indicate if the message was successfully delivered to the application and that a command was successfully executed or not. The sender should retry a message if an acknowledgement is not received within a certain time (but there should be a limit on the number of retries, eg. 3). The recipient node should use the *message-id* to ensure that the same message is not delivered to the application more than once.
 
+Destination address
+-------------------
+
+Aprs packets have a destination field. When APRS packets aren't adresses to specific stations, this field is often used to indicate which device or software is used. Polaric Server use `APPSxx` where xx indicate the version. This field can also be used to indicate that encryption or authentication is used and which version. `APPSEx` is used to indicate that encryption is used (the protocol described here). x can indicate which version starting with 1 and incremented when protocol changes significantly. `APPSAx` could be used in a similar way to indicate that authentication is used.   
+
+
