@@ -82,7 +82,7 @@ The format of an encrypted packet content is::
 **content**
     Base91 representation of the ciphertext. 
 
-A decrypted version of the packet can be constructed using the *from-callsign*, the *to-callsign* and the *path-information* from the received packet and by replacing the content-part (including '}}:' prefix) with the decrypted content. It is recommended to use the ``APPSEx`` to-address. If a '}}' prefix is used, it is *strongly* recommended. We will try to reserve a prefix for *Polaric Server* or the *Norwegian Radio Relay league*. 
+A decrypted version of the packet can be constructed using the *from-callsign*, the *to-callsign* and the *path-information* from the received packet and by replacing the content-part (including '}}:' prefix) with the decrypted content. It is recommended to use the the to-address to indicate what application/protocol is used (``APPSEx``). If a '}}' prefix is used, this is *strongly* recommended. We will try to reserve a prefix for *Polaric Server* or the *Norwegian Radio Relay league*. 
 
 *Polaric Server* (from v. 4.1) allows decrypting and encrypting position-reports or object-reports using this method. In principle all APRS messages can be encrypted this way. 
 
