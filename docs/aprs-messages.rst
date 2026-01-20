@@ -73,7 +73,7 @@ Aprs packets have a destination field. When APRS packets aren't adresses to spec
 Encrypted APRS position reports 
 ===============================
 
-Encrypting APRS packets other than messages is a somewhat different story. There is no packet-type for that in the original APRS standard, so we use a user-defined (experimental) format (prefixed with curly brackets '}'). We use AES/GCM-SIV the same way as with APRS-messages. The AES-key is generated from a secret key or passphrase (may be the same as used for authenticating messages and/or APRS-messages). *Polaric Server* uses a salt for APRS-messages and another salt for APRS position reports. When encrypting messages, an initialisation vector (IV) is used starting with the *message-id* and padding the rest of the IV with null so that its length is always 12 bytes. The encrypted message is encoded using base91.
+Encrypting APRS packets other than messages is a somewhat different story. There is no packet-type for that in the original APRS standard, so we use a user-defined (experimental) format, prefixed with curly brackets '}'. We use AES/GCM-SIV the same way as with APRS-messages. The AES-key is generated from a secret key or passphrase (may be the same as used for authenticating messages and/or APRS-messages). *Polaric Server* uses a salt for APRS-messages and another salt for APRS position reports. When encrypting messages, an initialisation vector (IV) is used starting with the *message-id* and padding the rest of the IV with null so that its length is always 12 bytes. The encrypted message is encoded using *base91*.
 
 The format of an encrypted packet content is:: 
 
