@@ -69,3 +69,19 @@ Destination address
 Aprs packets have a destination field. When APRS packets aren't adresses to specific stations, this field is often used to indicate which device or software is used. Polaric Server use ``APPSxx`` where xx indicate the version. This field can also be used to indicate that encryption or authentication is used and which version. ``APPSEx`` is used to indicate that encryption is used (the protocol described here). x can indicate which version starting with 1 and incremented when protocol changes significantly. ``APPSAx`` could be used in a similar way to indicate that authentication is used.   
 
 
+
+Encrypted APRS position reports 
+===============================
+
+Encrypting APRS packets other than messages is a somewhat different story. There is not a packet-type for that in the original APRS standard, so we use a user-defined (experimental) format (prefixed with curly brackets '}'). We use AES/GCM-SIV without padding as we also do with APRS messages. The AES-key is generated from the secret key (may be the same as used for authenticating messages and/or APRS-messages). *Polaric Server* uses a salt for APRS-messages and another salt for APRS position reports. When encrypting messages, an initialisation vector (IV) is used starting with the *message-id* and padding the rest of the IV with null so that its length is always 12 bytes. The encrypted message is encoded using base91.
+
+The format of an encrypted packet content is:: 
+
+ }}:<content>
+
+**content**
+    Base91 representation of the ciphertext. 
+
+A decrypted version of the packet uses the from-callsign, the to-callsign and the path-information from the received packet and replaces the content part (including '}}:' prefix) with the decrypted content. It is recommended to use the ``APPSEx`` to-address. If a '}}' prefix is used, it is *strongly* recommended. We will try to reserve a prefix for *Polaric Server* or the *Norwegian Radio Relay league*. 
+
+
