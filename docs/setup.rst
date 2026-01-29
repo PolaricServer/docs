@@ -27,7 +27,7 @@ If you choose *'Server Config'* in the menu, you will now see a set of fields th
 
 * **Object settings**. Some settings for transmission of object-reports. You can change the *range* from the server's position where object reports are transmitted or igated to RF (relevant if igating is on), you can turn on encryption of object reports or (optionally) set an alternative digipeater path. 
 
-* **Connection to another Polaric Server instance** (over APRS) for remote control and synchronization of SAR information (alias, tags, etc..). Servers to be connected, need to agree on a common secret (authentication key). *This is for advanced users*.
+* **Connection to another Polaric Server instance** (over APRS) for remote control and synchronization of SAR information (alias, tags, etc..). Servers to be connected, need to agree on a common secret (key for encryption and authentication). We can also specify to which servers *messages* are to be *encrypted* (regular expression). 
 
 When you are done with settings on this page, click *'Update'* and you can move on to another set of settings. 
 
@@ -78,4 +78,4 @@ A smart-beaconing algorithm will be used if the position changes. The frequency 
 To activate the settings
 ------------------------
 
-For each page of settings click the *'Update'* button to save your changes (or *'Add'* to save a new channel). Changes to channels will take effect immediately. Other changes may need a restart to become active. 
+For each page of settings click the *'Update'* button to save your changes (or *'Add'* to save a new channel). Changes to channels will take effect immediately. If a restart is necessary, it will be indicated.  
