@@ -27,7 +27,7 @@ If you choose *'Server Config'* in the menu, you will now see a set of fields th
 
 * **Object settings**. Some settings for transmission of object-reports. You can change the *range* from the server's position where object reports are transmitted or igated to RF (relevant if igating is on), you can turn on encryption of object reports or (optionally) set an alternative digipeater path. 
 
-* **Connection to another Polaric Server instance** (over APRS) for remote control and synchronization of SAR information (alias, tags, etc..). Servers to be connected, need to agree on a common secret (key for encryption and authentication). We can also specify to which servers *messages* are to be *encrypted* (regular expression). 
+* **Connection to another Polaric Server instances** (over APRS) for remote control, synchronization of SAR information (alias, tags, etc..) and personal text-messages. Servers to be connected, need to agree on a common secret (key for encryption and authentication). We can also specify to which servers *messages* are to be *encrypted* (regular expression). 
 
 When you are done with settings on this page, click *'Update'* and you can move on to another set of settings. 
 
