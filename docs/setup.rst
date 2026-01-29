@@ -25,6 +25,8 @@ If you choose *'Server Config'* in the menu, you will now see a set of fields th
 
 * **Igate settings**. *Polaric-aprsd* is capable of running as a igate if required. If you set up the server with both internet and TNC/Radio it *may* be useful to activate the igate. *Don't activate it if you don't need it*. The igate use the channels which are marked as the primary RF and APRS-IS channels (in channel-setup). Make sure that these channels are correctly configured *before* you activate the igate.
 
+* **Object settings**. Some settings for transmission of object-reports. You can change the *range* from the server's position where object reports are transmitted or igated to RF (relevant if igating is on), you can turn on encryption of object reports or (optionally) set an alternative digipeater path. 
+
 * **Connection to another Polaric Server instance** (over APRS) for remote control and synchronization of SAR information (alias, tags, etc..). Servers to be connected, need to agree on a common secret (authentication key). *This is for advanced users*.
 
 When you are done with settings on this page, click *'Update'* and you can move on to another set of settings. 
