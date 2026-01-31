@@ -2,7 +2,7 @@
 Basic setup of Polaric APRSD
 ============================
 
-The most important settings can be done via the web-interface. It is a good idea to do this as soon as the server is up and running. You will need to log-in with *admin* (superuser) rights. The package initially comes with an admin-user (*‘admin’*) with password *‘polaric’*. **Important**: You should of course change this password as soon as possible. You may use the command shell to do this::
+The most important settings can be done via the web-interface. You will need to log-in with *admin* (superuser) rights. The package initially comes with an admin-user (*‘admin’*) with password *‘polaric’*. **Important**: You should of course change this password as soon as possible. You may use the command shell to do this::
 
     sudo polaric-passwd admin
 
@@ -25,9 +25,9 @@ If you choose *'Server Config'* in the menu, you will now see a set of fields th
 
 * **Igate settings**. *Polaric-aprsd* is capable of running as a igate if required. If you set up the server with both internet and TNC/Radio it *may* be useful to activate the igate. *Don't activate it if you don't need it*. The igate use the channels which are marked as the primary RF and APRS-IS channels (in channel-setup). Make sure that these channels are correctly configured *before* you activate the igate.
 
-* **Object settings**. Some settings for transmission of object-reports. You can change the *range* from the server's position where object reports are transmitted or igated to RF (relevant if igating is on), you can turn on encryption of object reports or (optionally) set an alternative digipeater path. 
+* **Object settings**. Some settings for transmission of object-reports. You can set the *range* from the server's position where object reports are transmitted or igated to RF (relevant if igating is on), you can turn on encryption of object-reports or (optionally) set an alternative digipeater path. 
 
-* **Connection to another Polaric Server instances** (over APRS) for remote control, synchronization of SAR information (alias, tags, etc..) and personal text-messages. Servers to be connected, need to agree on a common secret (key for encryption and authentication). We can also specify to which servers *messages* are to be *encrypted* (regular expression). 
+* **Connection to another Polaric Server instances** (over APRS) for remote control, synchronization of SAR information (alias, tags, etc..) and personal text-messages. Servers to be connected, need to agree on a *common secret* (key for encryption and authentication). We can also specify to which servers *messages* are to be *encrypted* (regular expression). 
 
 When you are done with settings on this page, click *'Update'* and you can move on to another set of settings. 
 
@@ -64,11 +64,10 @@ The *radio* channel is not activated by default and can be removed if you don't 
 If type is ``TCPKISS``, you fill in the IP-address (or server host name) and a port number. ``TCPKISS`` is useful e.g. if using *Polaric-aprsd* along with programs like *Direwolf*. Actually, it may be used to access any TNC over a serial device, using a serial to network proxy like *ser2net* or *tcptty*. This can be more flexible and reliable than using the serial port directly from Polaric-aprsd.   
 
 
-
 Positioning
 -----------
 
-*Polaric-aprs* can be set up to send position reports like a tracker. It will only send such reports on the primary internet channel (APRSIS, APIRSIS-SRV or ROUTER) unless you explicitly allow it to send it on RF. A digipeater path would be used on RF. You may use a GPS on a serial port and you may also use the NMEA packets from the GPS to adjust the clock. If GPS is not used or if it doesn't get a fix, we may use a default fixed position. 
+*Polaric-aprsd* can be set up to send position reports like a tracker. It will only send such reports on the primary internet channel (APRSIS, APIRSIS-SRV or ROUTER) unless you explicitly allow it to send it on RF. Position reports can be encrypted and you can choose if encryption is to be used on RF as well as on APRS-IS. A digipeater path would be used on RF. You may use a GPS on a serial port and you may also use the NMEA packets from the GPS to adjust the clock. If GPS is not used or if it doesn't get a fix, we may use a default fixed position. 
 
 A smart-beaconing algorithm will be used if the position changes. The frequency of the reporting will depend on the speed and direction of the movement. *Min-pause* is the minimum time between transmissions. *Max-pause* is the maximum time between transmissions. *Min-distance* is the distance (should perhaps be called max-distance) moved before a transmission is generated and max-turn is the maximum change in direction before a transmission is generated. 
 
