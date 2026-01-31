@@ -553,5 +553,5 @@ Performance Considerations
 See Also
 ========
 
-* Standard APRS-IS Filter Specification: https://www.aprs-is.net/javAPRSFilter.aspx
-* APRS Protocol Specification: http://www.aprs.org/doc/APRS101.PDF
+* `Standard APRS-IS Filter Specification [https://www.aprs-is.net/javAPRSFilter.aspx]`_
+* `APRS Protocol Specification [http://www.aprs.org/doc/APRS101.PDF]`_
