@@ -76,7 +76,7 @@ A smart-beaconing algorithm will be used if the position changes. The frequency 
 
 Encryption
 ----------
-From version 4.1. Polaric Aprsd support *encryption* of messages (internal and personal messaging) and position reports to be able to satisfy security requirements in emergency communicato when the APRS-IS network sends everything worldwide and has no security. Radio amateur regulations typically don't allow using encryption on RF, so you should be careful in configuring this. In some countries, in some situations, encryption on RF may be required and legal. 
+From version 4.1. *Polaric Aprsd* support *encryption* of messages (internal and personal messaging) and position reports to be able to satisfy security requirements in emergency communicato when the APRS-IS network sends everything worldwide and has no security. Radio amateur regulations typically don't allow using encryption on RF, so you should be careful in configuring this. In some countries, in some situations, however, encryption on RF may be legal. 
 
 We use AES-256, a strong symmetric encryption which also authenticates the content. See more here how this is done for messaging and for position reports. The key can be set in the server-config window and should be secret and not too short. It can be a passphrase. It must be the same on all servers that are to take part in the encrypted communication. The key is also used when just authenticating messages. 
 
