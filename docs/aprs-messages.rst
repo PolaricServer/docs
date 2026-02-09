@@ -73,7 +73,7 @@ Aprs packets have a destination field. When APRS packets aren't adresses to spec
 Encrypted APRS position reports 
 ===============================
 
-Encrypting APRS packets other than messages is a somewhat different story. There is no packet-type for that in the original APRS standard, so we use a user-defined (experimental) format, prefixed with curly brackets '}'. We use AES/GCM-SIV the same way as with APRS-messages. The AES-key is generated from a secret key or passphrase (may be the same as used for authenticating messages and/or APRS-messages). *Polaric Server* uses a salt for APRS-messages and another salt for APRS position reports. When encrypting messages, an initialisation vector (IV) is used starting with the *message-id* and padding the rest of the IV with null so that its length is always 12 bytes. The encrypted message is encoded using *base91*.
+Encrypting APRS packets other than messages is a somewhat different story. There is no packet-type for that in the APRS standard, so we use a user-defined (experimental) format, prefixed with curly brackets '}'. We use AES/GCM-SIV encryption the same way as with APRS-messages. The AES-key is generated from a secret key or passphrase (may be the same as used for authenticating messages and/or APRS-messages). *Polaric Server* uses one salt for APRS-messages and another salt for APRS position reports. When encrypting messages, an initialisation vector (IV) is used starting with the *from* address and padding the rest of the IV with null so that its length is always 12 bytes. The encrypted message is encoded using *base91* (APRS-encoding like in: https://github.com/maqifrnswa/Simple-Base91).
 
 The format of an encrypted packet content is:: 
 
@@ -82,9 +82,9 @@ The format of an encrypted packet content is::
 **content**
     Base91 representation of the ciphertext. 
 
-A decrypted version of the packet can be constructed using the *from-callsign*, the *to-callsign* and the *path-information* from the received packet and by replacing the content-part (including '}}:' prefix) with the decrypted content. It is recommended to use the the to-address to indicate what application/protocol is used (``APPSEx``). If a '}}' prefix is used, this is *strongly* recommended. We will try to reserve a prefix for *Polaric Server* or the *Norwegian Radio Relay league*. 
+A decrypted version of the packet can be constructed using the *from-callsign*, the *to-callsign* and the *path-information* from the received packet and by replacing the content-part (including '}}:' prefix) with the decrypted content. It is recommended to use the the to-address to indicate what application/protocol is used (``APPSEx``), especially if a '}}' prefix is used. 
 
-*Polaric Server* (from v. 4.1) allows decrypting and encrypting position-reports or object-reports using this method. In principle all APRS messages can be encrypted this way. 
+*Polaric Server* (from v. 4.1) allows decrypting and encrypting position-reports or object-reports using this method. In principle, all APRS messages can be encrypted this way. 
 
 .. note::
  Before configuring your software-installation to encrypt messages to be sent over amateur radio, be sure to check the HAM radio regulations in the country in question. Please be sure that encryption is used only where legal.
