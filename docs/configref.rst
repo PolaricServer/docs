@@ -22,7 +22,7 @@ The most used properties are handled by a web-interface and are stored in in ano
 ``aprsd.log.level``          What to be reported in log file (level 0-4)
 ``channel.logpackets``       Show incoming APRS packets in log file
 ``remotectl.userinfo``       Send logon usernames to other servers over APRS [1]_
-``remotectl.encrypt``        Encrypt logon usernames if sent over APRS [1]_ Regex on server id
+``remotectl.encrypt.old``    Encrypt logon usernames if sent over APRS [1]_ Regex on server id.
 ``map.icon.default``         What icon to be used by default for APRS items
 ============================ ===================================================================
 
