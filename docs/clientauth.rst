@@ -3,12 +3,12 @@ Client authentication
 =====================
 
 Version 3.0 comes with a login and authentication scheme which is better suited for REST API and mobile-apps. 
-Clients (users) with web-browsers or mobile-apps, can log in to the server using the username and a password. The client may call a method ``POST`` to a url ``directLogin`` with the form parameters: 'username' and 'password'. If login is successful, a *session-key* (base64 encoded, 64 characters long), will be returned and can be used in authenticating subsequent requests to the server as well when establishing websocket connections. This key should be treated as a secret. It is not persistent, so when the server reboots users have to log-in again. 
+Clients (users) with web-browsers or mobile-apps, can log in to the server using the username and a password. The client may call a method ``POST`` to a url ``directLogin`` with the form parameters: 'username' and 'password'. If login is successful, a *session-key* (base64 encoded, 44 characters long), will be returned and can be used in authenticating subsequent requests to the server as well when establishing websocket connections. This key should be treated as a secret. It is saved on reboots of the server but it is valid for a limited time.
 
 After a successful login the client can call the ``GET`` method on the url ``authStatus`` which will return info on server capabilities and what authorizations the users have. If authentication fails, it returns an error code (401 unauthorized). If authentication fails, a ``GET`` on an alternative ``authStatus2`` can be used to get some information about the server-session anyway.  
 
 .. note::
-    This is supported from aprsd version 3.0
+    This is supported from aprsd version 3.0. From version 4.2, the *binary* version of the key will be used in HMAC generation.
 
 
 Login using polaric-webapp2 client
@@ -67,10 +67,10 @@ HTTP(S) requests are authenticated the same way as for browser logins; an Author
 Secret Key
 ----------
 
-The secret key is manually installed on each server participating, in the file ``/etc/polaric-aprsd/keys/peers``. Entries in this file are in the following format:: 
+The secret key is derived (using HKDF2) from manually installed shared secrets servers participating, in the file ``/etc/polaric-aprsd/keys/peers``. Entries in this file are in the following format:: 
 
- service-name : key
+ service-name : secret
 
-Where the service-name can be used to identify a particular REST API and/or websocket service. The key is a random sequence of characters. It is recommended to use a secure random function to generate this and that they are Base64 encoded. 64 bytes is the recommended length of the key.
+Where the service-name can be used to identify a particular REST API and/or websocket service. The secret is a sequence of characters and shouldn't be too short and it should be hard to guess by attackers. It can be a password/passphrase but a tip is to use a secure random function to generate it. 
 
 Currently there is one service using this sheme: The ``dbsync`` of the Database plugin. 
