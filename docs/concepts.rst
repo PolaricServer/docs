@@ -58,6 +58,18 @@ Polaric Server is a free and open-source client/server application that supports
 This means that alternative clients to the system is possible (and encouraged). The system can utilize open GIS data from various source through open protocols like WMS or WFS. Different instances of the backend-server can exchange and synchronize information and other applications can communicate with the aprsd backend server in order to share information. 
 
 
+Security
+--------
+
+Polaric Server has a strong focus on security. For REST APIs and websocket connections we use a HMAC based authentication scheme (Arctic-HMAC). This is used for user-logins and for server-server communication. A hash-based authenticaton scheme is also used for APRS messages. Polaric Server supports use of *strong encryption* (AES-256) for APRS messages or APRS position reports. 
+
+Polaric Server offers role-based autorisation where different groups of users may have different levels of access. Different views (based on an advanced filter language) may be assigned to differenet roles. 
+
+Polaric Server can also run as a limited *APRS-IS service* that users and igates can connect. This can be used with a strong (HMAC/shared secret) passcode-based verification of user-logins. This is compatible with most existing clients/igates. An APRS-router can be set up which offers an extended version of APRS-IS filters. This can be set up as a kind of firewall for APRS-traffic. 
+
+Use of TLS and certificates for the web-based client should be used in addition to this. 
+
+
 Supported geographical objects
 ------------------------------
 
