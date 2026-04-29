@@ -65,9 +65,9 @@ Polaric Server has a strong focus on security. For REST APIs and websocket conne
 
 Polaric Server offers role-based autorisation where different groups of users may have different levels of access. Different views (based on an advanced filter language) may be assigned to differenet roles. 
 
-Polaric Server can also run as a limited *APRS-IS service* that users and igates can connect. This can be used with a strong (HMAC/shared secret) passcode-based verification of user-logins. This is compatible with most existing clients/igates. An APRS-router can be set up which offers an extended version of APRS-IS filters. This can be set up as a kind of firewall for APRS-traffic. 
+Polaric Server can also run as a limited *APRS-IS service* that users and igates can connect. This can be used with a strong (HMAC/shared secret) passcode-based verification of user-logins. This is compatible with most existing clients/igates. An *APRS-router* can be set up which offers an extended version of APRS-IS filters. This can be set up as a kind of firewall for APRS-traffic. 
 
-Use of TLS and certificates for the web-based client should be used in addition to this. 
+For the web-based client, TLS and certificates for the web-based client should be used. 
 
 
 Supported geographical objects
