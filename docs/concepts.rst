@@ -61,7 +61,7 @@ This means that alternative clients to the system is possible (and encouraged). 
 Security
 --------
 
-Polaric Server has a strong focus on security. For REST APIs and websocket connections we use a HMAC based authentication scheme (Arctic-HMAC). This is used for user-logins and for server-server communication. A hash-based authenticaton scheme is also used for APRS messages. Polaric Server supports use of *strong encryption* (AES-256) for APRS messages or APRS position reports. 
+Polaric Server has a strong focus on security. For REST APIs and websocket connections we use a HMAC based authentication scheme (`Arctic-HMAC <https://github.com/PolaricServer/Polaric-Core/blob/main/doc/arctic-hmac.md>`_ ). This is used for user-logins and for server-server communication. A hash-based authenticaton scheme is also used for APRS messages. Polaric Server supports use of *strong encryption* (AES-256) for APRS messages or APRS position reports. 
 
 Polaric Server offers role-based autorisation where different groups of users may have different levels of access. Different views (based on an advanced filter language) may be assigned to differenet roles. 
 
