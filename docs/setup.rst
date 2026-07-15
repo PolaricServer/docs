@@ -16,7 +16,7 @@ After you have installed *webapp2*, and this is up and running, you can use your
 * *Own pos config* (Use server as a position tracker)
 * *Channels config* (set up channels)
 * *Clear all items* (delete all position-items on the map).
-* *Synch nodes* (experimental: synchronisation between instances). Only visible if you use the database-plugin. 
+* *Synch nodes* (experimental: synchronisation between instances). Only available if you use the database-plugin. 
 
 Basic server settings
 ---------------------
@@ -27,7 +27,7 @@ If you choose *'Server Config'* in the menu, you will now see a set of fields th
 
 * **Object settings**. Some settings for transmission of object-reports. You can set the *range* from the server's position where object reports are transmitted or igated to RF (relevant if igating is on), you can turn on encryption of object-reports or (optionally) set an alternative digipeater path. 
 
-* **Connection to another Polaric Server instances** (over APRS) for remote control, synchronization of SAR information (alias, tags, etc..) and personal text-messages. Servers to be connected, need to agree on a *common secret* (key for encryption and authentication). We can also specify to which servers *messages* are to be *encrypted* (regular expression). 
+* **Connection to another Polaric Server instances** (over APRS) for remote control, synchronization of SAR information (alias, tags, etc..) and personal text-messages. Servers to be connected, need to agree on a *shared secret* (key for encryption and authentication). We can also specify to which servers *messages* are to be *encrypted* (regular expression). The last setting is a shared secret used for extended verification to APRS-IS servers run from Polaric Aprsd. 
 
 When you are done with settings on this page, click *'Update'* and you can move on to another set of settings. 
 
@@ -37,9 +37,9 @@ When you are done with settings on this page, click *'Update'* and you can move 
 Configuration of data channels
 ------------------------------
 
-You see a list of channels and the running status of those. You may delete or add channels. Or you may click the edit-icon to see more detailed info and edit settings of the channel. 
+You see a list of channels and the running status of those. You may add or delete channels. Or you may click the edit-icon to see more detailed info and edit settings of the channel. 
 
-There are two different types of APRS-channels: *Radio*-channels and *Internet* (non-radio) channels. In addition, plugins may add *Non-APRS* channels, for example AIS. What fields to fill inn depends on the *type*. If clicking on the *edit* icon on the channel list, the relevant fields are shown. If the channel is active, it will also show some statistics like number of received packets. Up to two channels may be marked as *primary*: One Internet-channel and one radio-channel. This is needed when igate is activated or the server needs to send out things on APRS. Channels that are not primary are normally receive-only. Press '*New*' button to create a new channel (choose a name and type first), fill inn the necessary information. and press *'Add'* to save it. 
+There are two different types of APRS-channels: *Radio*-channels and *Internet* (non-radio) channels. In addition, plugins may add *Non-APRS* channels, for example AIS. What fields to fill inn depends on the *type*. If clicking on the *edit* icon on the channel list, the relevant fields are shown. If the channel is active, it may also show some statistics like number of received packets. Up to two channels may be marked as *primary*: One *Internet-channel* and one *radio-channel*. Both would be needed if igate is activated or at least one of them is needed if the server needs to send out things on APRS. Channels that are not primary are normally receive-only. Press '*New*' button to create a new channel (choose a name and type first), fill inn the necessary information. and press *'Add'* to save it. 
 
 The available Internet APRS channel types are: 
 
@@ -47,7 +47,7 @@ The available Internet APRS channel types are:
 * ``APRSIS-SRV`` - Act as an APRS-IS *server* on a specific port so that e.g. igates can connect. 
 * ``ROUTER`` - A special channel that can be connected to APRSIS or APRSIS-SRV channels (with a filter for each) and act as *APRS-router*. A router-channel can be used as a primary channel. Packets sent to a primary router will be sent on all connected channels depending on filters. Filters in the router-setup decide what go to the connected channels. For each connected channel (APRSIS or APRSIS-SRV) you can set up filters for incoming traffic, so it is possible to configure it as a kind if '*firewall*' for APRS-traffic. 
 
-*APRS-IS server and router channels are available from version 3.2 (or later) of Polaric Server.* 
+*APRS-IS server and router channels are available from version 4.2 (or later) of Polaric Server.* 
 
 One APRS-IS channel (aprsIS) is already set up and activated. The channel may for example use the server *`aprs.no`*, port 14580. There are also protected ports available for NRRL-members. 'Users in other countries should change the APRS-IS server to what is best suited in their area. You should also add a *passcode* which will allow you to send data to APRS-IS as well. This code can be generated based on your *callsign*. There are programs or services on the net that can generate a passcode for you if you have a valid callsign. You should also set a filter expression that says more specifically what you want from the APRS-IS server. The filter should be set to accept data from your geographical area of interest or types of data you need. Note that this filter is necessary if you use the general port 14580. `See more information <https://polaricserver.readthedocs.io/en/latest/aprs-filters.html>`_ about server filters. In addition to the filter to be sent to the server we can (from v.4.0) also specify an internal filter for incoming packets. Use '*' to accept all, possibly with exception filters to block unwanted traffic. 
 
