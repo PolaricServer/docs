@@ -41,7 +41,7 @@ Key offline capabilities include:
 
 * **Graceful Degradation**: The system is designed to degrade gracefully when transitioning between online and offline modes. Features that require internet access (such as synchronization with other server instances or access to external data sources) become unavailable, but core functionality for tracking, mapping, and local operations remains fully operational.
 
-The system is suitable for deployment on small devices such as Raspberry Pi, making it practical for mobile and field use where resources are constrained. This offline-first design philosophy ensures that critical tracking and mapping capabilities remain available regardless of network conditions, which is essential for emergency response, search and rescue operations, and other field activities.
+The system is suitable for deployment on small devices such as Raspberry Pi, making it practical for mobile and field use where resources are constrained. This offline-first (local-first) design philosophy ensures that critical tracking and mapping capabilities remain available regardless of network conditions, which is essential for emergency response, search and rescue operations, and other field activities.
 
 
 Interoperability and extensibility
@@ -65,7 +65,7 @@ Polaric Server has a strong focus on security. For REST APIs and websocket conne
 
 Polaric Server offers role-based authorisation where different groups of users may have different levels of access. Different views (based on an advanced filter language) may be assigned to different roles. 
 
-Polaric Server can also run as a limited *APRS-IS service* that users and igates can connect. This can be used with a strong (HMAC/shared secret) passcode-based verification of user-logins. This is compatible with most existing clients/igates. An *APRS-router* can be set up which offers an extended version of APRS-IS filters. This can be set up as a kind of firewall for APRS-traffic. 
+Polaric Server can also run *APRS-IS services* that users and igates can connect. This can be used with a strong (HMAC/shared secret) passcode-based verification of user-logins. This is compatible with most existing clients/igates. An *APRS-router* can be set up which offers an extended version of APRS-IS filters. This can be set up as a kind of firewall for APRS-traffic. 
 
 For the web-based client, TLS and certificates for the web-based client should be used. 
 
