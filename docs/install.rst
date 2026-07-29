@@ -12,6 +12,8 @@ The packages should work on Debian *stable* systems. From august 2025 this means
 .. note::
   Please remember to maintain and update the *Polaric Server* installation now and then ('`apt update; apt upgrade`'). Running very old versions pose a security risk and you risk missing improvements and new features. The current version is 4.2. From 4.1 a check was added and ancient versions will print a warning in the log or even refuse to run.
 
+The current version is 4.2.
+
 Deb Repository
 --------------
 
