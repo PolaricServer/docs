@@ -4,13 +4,13 @@ Installing Polaric Server
 
 This is a description how to install the *Polaric Server* software on a *Debian* based Linux platform. It consists of two main components: The APRS daemon (*polaric-aprsd*) and the Web application (*polaric-webapp2*). In addition there may be plugins. If you are unknown to Linux and Apache system administration, I recommend exploring this a little before attempting to install Polaric Server or that you get help from a friend. If you plan to put up a server permanently on the internet, you should know what you are doing, i.e. you should have some basic knowledge on internet security and firewall setup. I assume you can prefix commands with *'sudo'* or login as *'root'* to be able to perform the installation.
 
-The packages should work on Debian *stable* systems. From august 2025 this will mean 'Trixie'. The setup as suggested below should work with Trixie. It should probably also work on 'unstable' or 'testing' as well as recent Debian based distros like Ubuntu, Mint, Raspbian, Armbian, etc. Windows 10/11 with Linux subsystem (With Debian or Ubuntu) should probably work as well. The current version of Polaric requires Java-17 or later, the next version will require Java-21. Debian Trixie offers Java-21 or 25. 
+The packages should work on Debian *stable* systems. From august 2025 this means 'Trixie'. The setup as suggested below should work with Trixie. It should probably also work on 'unstable' or 'testing' as well as recent Debian based distros like Ubuntu, Mint, Raspbian, Armbian, etc. Windows 11 with Linux subsystem (With Debian or Ubuntu) should probably work as well. The current version of Polaric requires Java-21 or later, the next version will require Java-25. Debian Trixie offers Java-21 or 25. 
 
 .. note::
  It is important that the computer on which to install *Polaric Server* has a clock with correct time. It is recommended to install a *`ntp`* client ('`apt install ntp`'). *Polaric Server* can alternatively use a GPS to adjust the host computer's clock. 
 
 .. note::
-  Please remember to maintain and update the *Polaric Server* installation now and then ('`apt update; apt upgrade`'). Running very old versions pose a security risk and you risk missing improvements and new features. The current version is 4.0. From 4.1 a check will be added and ancient versions will print a warning or refuse to run.
+  Please remember to maintain and update the *Polaric Server* installation now and then ('`apt update; apt upgrade`'). Running very old versions pose a security risk and you risk missing improvements and new features. The current version is 4.2. From 4.1 a check was added and ancient versions will print a warning or refuse to run.
 
 Deb Repository
 --------------
@@ -41,19 +41,17 @@ The APRS daemon (polaric-aprsd) is a server program that processes APRS data (fr
 
    apt install polaric-aprsd
 
-The program will be installed and started automatically. To check that it works, take a look at the log file::
+The program will be installed and started automatically. To check that it works, take a look at the main log file::
 
    tail -f /var/log/polaric/aprsd.log
 
-If things are ok, you will see new APRS messages arrive. Type CTRL-C to quit.
-
-You should now configure the server with your callsign and you should also review other configuration parameters like the aprs-is server, passcode, etc. A quick way to set the default callsign is the command:: 
+Ther are other log files as well. You should now configure the server with your callsign and you could also review other configuration parameters like the aprs-is server, passcode, etc. A quick way to set the default callsign is the command:: 
 
    polaric-setcall
 
-It will ask you for a callsign. It will take effect next time you restart the aprsd. For more configuration, install the web-application (see below). It covers the most important settings. There are also some setting (for more advanced users) that can by changed manually by editing the file: `/etc/polaric-aprsd/server.ini`.
+It will ask you for a callsign. It will take effect next time you restart the aprsd. For more configuration, install the web-application (see below). It covers the most important settings. There are also some setting (for more advanced users) that can by changed manually by editing the file: `/etc/polaric-aprsd/server.ini`. Normally, the web-application can be used for most configuration settings. 
 
-For all details, see the configuration reference. Note that configuration through the web interface overrides the manual config in the server.ini file which then can be viewed as default settings.
+For details, see the configuration reference. Note that configuration through the web interface overrides the manual config in the 'server.ini' file which then can be viewed as default settings.
 
 The server can be restarted by issuing the command::
 
@@ -73,7 +71,7 @@ By default the webapp can be accessed through ``https://hostname/aprs`` where ho
 You can log in as *'admin'* using this web-interface. Default password *'polaric'*. Then you have access to configuration and user-management of the system. You can change the password using the *'polaric-passwd'* command or the web interface.  
 
 .. note::
-  From version 3.0, we use https by default (http over SSL/TLS). A self-signed certificate will be used, so the first time you access the web-interface, the browser will warn you about the certificate. You would need to make an exception and accept this certificate. You can change this later if needed.
+  Polaric-server uses https by default (http over SSL/TLS). A self-signed certificate will be used, so the first time you access the web-interface, the browser will warn you about the certificate. You would need to make an exception and accept this certificate. You can change this later if needed.
 
 Configuring the webapp
 ----------------------
@@ -102,7 +100,7 @@ Plugins are optional and easy to install. Plugins with available deb packages ar
    and configuring the database, but it may need some additional configuration.
  * **polaric-ais-plugin**. It implements integration of AIS datastream (over TCP). It depends on polaric-aprsd.
 
-I hope to be able to write documentation for the plugins some time. The database-plugin can be complex to setup and requires some database-knowledge. Feel free to contact me for assistance. I recommend to install the basic aprsd first and be sure that it is working before you add plugins.. 
+I hope to be able to write documentation for the plugins some time. The database-plugin can be more complex to setup and requires some database-knowledge. Feel free to contact me for assistance. I recommend to install the basic *aprsd* first and be sure that it is working before you add plugins.. 
 
 If you want to write your own plugin, feel free to do so, and feel free to contact me for more information. 
  
