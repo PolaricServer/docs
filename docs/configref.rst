@@ -24,7 +24,7 @@ The most used properties are handled by a web-interface and are stored in in ano
 ``channel.<chname>.log.level``  Set log level for channel <chname> (level 0-4)
 ``remotectl.userinfo``          Send logon usernames to as APRS messages [1]_ Regex on server id
 ``remotectl.encrypt``           Encrypt remotectl messages to [1]_ Regex on server id.
-``remotectl.encrypt.old``       Deprecated. Don't use.
+``remotectl.encrypt.old``       Old method of encrypting only usernames. Regex on server id.
 ``map.icon.default``            What icon to be used by default for APRS items
 =============================== ===================================================================
 
