@@ -9,25 +9,27 @@ Configuration file: server.ini
     
 The most used properties are handled by a web-interface and are stored in in another file: */var/lib/polaric/config.xml*. This file should not be edited by hand. For more advanced needs we can edit *server.ini* to configure aprsd. It contains some additional «properties» consisting of name-value pairs. Comment lines start with '#'. There are explanations in the file. The table below summarizes what properties which may be set in this file.
 
-============================ ===================================================================
- Property                    Meaning
-============================ ===================================================================
-``timezone``                 Time zone. In Norway we use "Europe/Oslo"
-``httpserver.port``          HTTP server listens on this port.
-``httpserver.secure``        Set HTTPS mode for server
-``httpserver.keystore.pw``   Password for keystore. This is authomatically set by scripts. 
-``httpserver.securesession`` Use secure flag (force HTTPS) for login session
-``httpserver.alloworigin``   Origin-URLs accepted for CORS access (regular expression).
-``httpserver.filedir``       Location of static files available to backend webserver
-``aprsd.log.level``          What to be reported in log file (level 0-4)
-``channel.logpackets``       Show incoming APRS packets in log file
-``remotectl.userinfo``       Send logon usernames to other servers over APRS [1]_
-``remotectl.encrypt.old``    Encrypt logon usernames if sent over APRS [1]_ Regex on server id.
-``map.icon.default``         What icon to be used by default for APRS items
-============================ ===================================================================
+=============================== ===================================================================
+ Property                       Meaning
+=============================== ===================================================================
+``timezone``                    Time zone. In Norway we use "Europe/Oslo"
+``httpserver.port``             HTTP server listens on this port.
+``httpserver.secure``           Set HTTPS mode for server
+``httpserver.keystore.pw``      Password for keystore. This is authomatically set by scripts. 
+``httpserver.securesession``    Use secure flag (force HTTPS) for login session
+``httpserver.alloworigin``      Origin-URLs accepted for CORS access (regular expression).
+``httpserver.filedir``          Location of static files available to backend webserver
+``aprsd.log.level``             What to be reported in log file (level 0-4)
+``channel.<chname>.logpackets`` Turn on logging of packets for channel <chname>
+``channel.<chname>.log.level``  Set log level for channel <chname> (level 0-4)
+``remotectl.userinfo``          Send logon usernames to as APRS messages [1]_ Regex on server id
+``remotectl.encrypt``           Encrypt remotectl messages to [1]_ Regex on server id.
+``remotectl.encrypt.old``       Deprecated. Don't use.
+``map.icon.default``            What icon to be used by default for APRS items
+=============================== ===================================================================
 
-.. [1] Be careful with the *remotectl* settings. It may be illegal to encrypt messages sent over HAM radio
-       and we should respect privacy regulations (GDPR). These settings only make sense if using short-messaging 
+.. [1] Be careful to check the regulations before encrypting messages to be sent over HAM radio
+       We should respect privacy regulations. These settings only make sense if using short-messaging 
        between different servers. 
        
        
