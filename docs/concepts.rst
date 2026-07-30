@@ -73,13 +73,13 @@ For the web-based client, TLS and certificates for the web-based client should b
 Channels and router
 -------------------
 
-For incoming and outgoing traffic (typically APRS) we use *channels*.The Polaric Server by default supports channels for APRS. In addition it is possible for *plugins* to provide channels for other types of traffic, for instance AIS. A number of channels may be created and uses as data-sources. For APRS, we have two types of channels: *RF (radio)* channels that are assumed to represent a radio, typically connected by a serial line and *internet* channels.
+For incoming and outgoing data streams (typically APRS) we can set up *channels*. By default *Polaric Server* supports channels for APRS. In addition it is possible for *plugin software* to provide channels for other types of traffic, for instance AIS. A number of channels may be created and used as data-sources. For APRS, we have two types of channels: (1) *RF (radio)* channels that are assumed to represent a radio, typically connected to by a serial line and (2) *internet* channels.
 
-Incoming traffic on a channel goes either to the application or a linked router. For outgoing traffic, at most two channels can be set up as *primary* which means that the map-application will use them for outgoing traffic: One can be of the internet type and one of the RF type. Polaric Server can also set up as an igate which would also use these two primary channels. 
+Incoming traffic from a channel goes either to the application or a linked "router". For outgoing traffic, at most two channels can be set up as *primary* which means that the map-application will use them for outgoing traffic: One can be of the internet type and one of the RF type. Polaric Server can also set up as an igate which would also use these two primary channels. 
 
 There are three types if RF (radio) channels: (1) KISS TNC over serial, (2) KISS over TCP (internet), for example a Direwolf program, (3) a TNC2 over a serial line. 
 
-There are three types of internet channels: (1) One that can perform as an *APRS-IS client* (connect to an external APRS-IS service), (2) one that can perform as an *APRS-IS server* that external igates or APRS-clients may connect to. We also have (3) a special type of channel called a *router* that can be linked to several other channels each with a filter that defines what defines what goes to each of them. Each channel also has a incoming-filter. Altogether, a router and associated channels can be set up to act as a *firewall* for APRS-IS traffic. The figure below illustrates the idea.  
+There are three types of internet channels: (1) One that can work as an *APRS-IS client* (connect to an external APRS-IS service), (2) one that can work as an *APRS-IS server* that external igates or APRS-clients can connect to. We also have (3) a special type of channel called a *router* that can be linked to several other channels each with a filter that defines what defines what goes to each of them. Each channel also has a incoming-filter. Altogether, a router and associated channels can be set up to act as a *firewall* for APRS-IS traffic. The figure below illustrates the idea.  
 
 .. image:: img/router.jpg 
 
