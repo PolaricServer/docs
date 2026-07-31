@@ -465,6 +465,20 @@ Filter by input channel identifier. Used internally to filter packets by their s
 
 Matches packets received from channels named "APRSIS" or "TNC1".
 
+
+Predefined filter (P)
+---------------------
+
+*Polaric-specific filter*
+
+Use a filter by name. The filter should be defined in the server config file: aprsfilters
+
+**Syntax**::
+
+    P/*name*
+
+
+
 Complex Filter Examples
 =======================
 
