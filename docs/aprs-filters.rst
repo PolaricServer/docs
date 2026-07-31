@@ -5,7 +5,7 @@ APRS-IS Filters
 Overview
 ========
 
-Polaric APRSD implements APRS-IS server-side filters to control which packets are delivered to its clients. They are also used internally. These filters implement the standard APRS-IS filter specification, and adds some Polaric APRSD specific extensions. These are: *All-packets*, *channel-filter (C)* and *conjunction* (&).  
+Polaric APRSD implements APRS-IS server-side filters to control which packets are delivered to its clients. They are also used internally. These filters implement the standard APRS-IS filter specification, and adds some Polaric APRSD specific extensions. These are: *All-packets*, *channel-filter (C)*. *predefined filter (P)* and *conjunction* (&).  
 
 Filter Syntax
 =============
