@@ -79,7 +79,7 @@ Incoming traffic from a channel goes either to the application or a linked "rout
 
 There are three types if RF (radio) channels: (1) KISS TNC over serial, (2) KISS over TCP (internet), for example a Direwolf program, (3) a TNC2 over a serial line. 
 
-There are three types of internet channels: (1) One that can work as an *APRS-IS client* (connect to an external APRS-IS service), (2) one that can work as an *APRS-IS server* that external igates or APRS-clients can connect to. We also have (3) a special type of channel called a *router* that can be linked to several other channels each with a filter that defines what defines what goes to each of them. Each channel also has a incoming-filter. Altogether, a router and associated channels can be set up to act as a *firewall* for APRS-IS traffic. The figure below illustrates the idea.  
+There are three types of internet channels: (1) One that can work as an *APRS-IS client* (connect to an external APRS-IS service), (2) one that can work as an *APRS-IS server* that external igates or APRS-clients can connect to. We also have (3) a special type of channel called a *router* that can be linked to several other channels each with a filter that defines what goes to each of them. Each channel also has a incoming-filter. Altogether, a router and associated channels can be set up to act as a kind of *firewall* for APRS-IS traffic. The figure below illustrates the idea.  
 
 .. image:: img/router.jpg 
 
