@@ -623,7 +623,8 @@ Source: `ItemApi.java`
 |                        +-------+-+------------------------------------------------------+
 |                        | PUT   |S| Set alias for tracker with id (callsign).            |
 +------------------------+-------+-+------------------------------------------------------+
-
+|`/item`                 | DELETE|A| Delete all items                                     |
++------------------------+-------+-+------------------------------------------------------+
 .. http:get:: /item/(id)/xinfo
 
    Returns info about a item (tracker). The full set of returned attributes depend on the type of item. Here we show what all items will have. 
