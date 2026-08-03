@@ -156,7 +156,7 @@ Source: ´SysAdminApi.java´
 |                                   +-------+-+--------------------------------------------------+
 |                                   | DELETE|A| DELETE a channel                                 |
 +-----------------------------------+-------+-+--------------------------------------------------+
-|`/system/adm/channels/{id}/clients`| GET   |A| REturn a list of connected clients               |
+|`/system/adm/channels/{id}/clients`| GET   |A| Return a list of connected clients               |
 +-----------------------------------+-------+-+--------------------------------------------------+
 
 
