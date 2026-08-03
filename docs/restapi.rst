@@ -131,31 +131,34 @@ System admin services
 ---------------------
 Source: ´SysAdminApi.java´
 
-+----------------------------+-------+-+--------------------------------------------------+
-|`/system/adm/restart`       | PUT   |A| Restart polaric aprsd                            |
-+----------------------------+-------+-+--------------------------------------------------+
-|`/system/adm/status`        | GET   |A| Get status info.                                 |
-+----------------------------+-------+-+--------------------------------------------------+
-|`/system/adm/clients`       | GET   |A| Get list of clients connected                    |
-+----------------------------+-------+-+--------------------------------------------------+
-|`/system/adm/server`        | GET   |A| Get server config                                |
-|                            +-------+-+--------------------------------------------------+
-|                            | PUT   |A| Update server config                             |
-+----------------------------+-------+-+--------------------------------------------------+
-|`/system/adm/ownpos`        | GET   |A| Get server's own position (if set)               |
-|                            +-------+-+--------------------------------------------------+
-|                            | PUT   |A| Update server's own position                     |
-+----------------------------+-------+-+--------------------------------------------------+
-|`/system/adm/channels`      | GET   |A| Get config of channels                           |
-|                            +-------+-+--------------------------------------------------+
-|                            | POST  |A| Add channel                                      |
-+----------------------------+-------+-+--------------------------------------------------+
-|`/system/adm/channels/{id}` | GET   |A| Get a specific channel config                    |
-|                            +-------+-+--------------------------------------------------+
-|                            | PUT   |A| Update a channel                                 |
-|                            +-------+-+--------------------------------------------------+
-|                            | DELETE|A| DELETE a channel                                 |
-+----------------------------+-------+-+--------------------------------------------------+
++-----------------------------------+-------+-+--------------------------------------------------+
+|`/system/adm/restart`              | PUT   |A| Restart polaric aprsd                            |
++-----------------------------------+-------+-+--------------------------------------------------+
+|`/system/adm/status`               | GET   |A| Get status info.                                 |
++-----------------------------------+-------+-+--------------------------------------------------+
+|`/system/adm/clients`              | GET   |A| Get list of clients connected                    |
++-----------------------------------+-------+-+--------------------------------------------------+
+|`/system/adm/server`               | GET   |A| Get server config                                |
+|                                   +-------+-+--------------------------------------------------+
+|                                   | PUT   |A| Update server config                             |
++-----------------------------------+-------+-+--------------------------------------------------+
+|`/system/adm/ownpos`               | GET   |A| Get server's own position (if set)               |
+|                                   +-------+-+--------------------------------------------------+
+|                                   | PUT   |A| Update server's own position                     |
++-----------------------------------+-------+-+--------------------------------------------------+
+|`/system/adm/channels`             | GET   |A| Get config of channels                           |
+|                                   +-------+-+--------------------------------------------------+
+|                                   | POST  |A| Add channel                                      |
++-----------------------------------+-------+-+--------------------------------------------------+
+|`/system/adm/channels/{id}`        | GET   |A| Get a specific channel config                    |
+|                                   +-------+-+--------------------------------------------------+
+|                                   | PUT   |A| Update a channel                                 |
+|                                   +-------+-+--------------------------------------------------+
+|                                   | DELETE|A| DELETE a channel                                 |
++-----------------------------------+-------+-+--------------------------------------------------+
+|`/system/adm/channels/{id}/clients`| GET   |A| REturn a list of connected clients               |
++-----------------------------------+-------+-+--------------------------------------------------+
+
 
 .. http:put:: /system/adm/restart
 
@@ -380,6 +383,27 @@ Source: ´SysAdminApi.java´
    :status 200: Ok
    :status 401: Authentication failed
    :status 403: Forbidden
+
+
+.. http:get:: /system/adm/channels/{id}/clients
+
+   Return a list of connected clients
+ 
+   :parameter id: Channel identifier
+   :status 200: Ok
+   :status 404: Invalid channel type
+   :status 401: Authentication failed
+   :status 404: Channel not found
+
+   :>jsonarr string userid: User identifier
+   :>jsonarr string ipaddr: IP address
+   :>jsonarr string software: Software version
+   :>jsonarr boolean verified: True if login is verified
+   :>jsonarr long    txpackets: Transmitted packets
+   :>jsonarr long    rxpackets: Received packets
+   :>jsonarr string  filter: Filter string used
+
+
 
 
 Users and clients
