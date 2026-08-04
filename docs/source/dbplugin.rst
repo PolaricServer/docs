@@ -5,29 +5,27 @@ The database plugin makes use of the PostgreSQL database system (with PostGIS) t
 
 Install
 -------
+The plugin is available as a deb package. To install::
 
-# apt install polaric-db-plugin
+    apt install polaric-db-plugin
 
 Install database system components, create tables, etc. Do this the first time the plugin is installed.  
-run the script:
+run the script::
 
-# polaric-dbsetup
-# polaric-restart
-
+    polaric-dbsetup
+    polaric-restart
 
 Upgrade the database schema. Do this when the plugin is upgraded. 
-Run the script: 
+Run the script:: 
 
-# polaric-dbupgrade
-# polaric-restart
-
+    polaric-dbupgrade
+    polaric-restart
 
 It is possible to access the database from the psql shell. It can be useful for advanced users and developers to se more closely what is going on, perform various database queries and do maintenance tasks. 
-To start the database shell: 
+To start the database shell::
 
-# su - postgres
-# psql polaric
-
+    su - postgres
+    psql polaric
 
 The plugin does periodic maintenance tasks automatically, garbage collection, removing outdated data, etc.. 
 
