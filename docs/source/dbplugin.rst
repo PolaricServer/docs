@@ -1,7 +1,15 @@
 Database Plugin
 ===============
 
-The database plugin makes use of the PostgreSQL database system (with PostGIS) to extend the functionality. 
+The database plugin adds database storage using PostgreSQL (with PostGIS). It stores APRS 
+position-updates (spatiotemporal data) and APRS packets for later analysis. It is configurable what callsigns 
+are stored and for how long. Queries include movement trails, positions covered by digipeaters, etc. 
+with this plugin you can go to a speficic time in history and generate a map-overlay showing the 
+situation at that time (for data that is stored).
+ 
+Client/user-owned data like trackers, static position objects, map-extents, map-layer setups, etc.
+through a REST API. Also, the drawing tool uses it to store features. It also supports replication 
+(between server-instances) with eventual consistency (CRDT) for some data objects.
 
 Install
 -------
@@ -13,13 +21,11 @@ Install database system components, create tables, etc. Do this the first time t
 run the script::
 
     polaric-dbsetup
-    polaric-restart
 
 Upgrade the database schema. Do this when the plugin is upgraded. 
 Run the script:: 
 
     polaric-dbupgrade
-    polaric-restart
 
 It is possible to access the database from the psql shell. It can be useful for advanced users and developers to se more closely what is going on, perform various database queries and do maintenance tasks. 
 To start the database shell::
