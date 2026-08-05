@@ -28,17 +28,18 @@ Then restart the aprsd (polaric-restar) to activate it.
 Maintenance
 -----------
 
-When the plugin is upgraded, it may be necessary to upgrade the database schema. To do this, run the script::
+When the plugin is upgraded, it may be necessary to upgrade the database schema. Each revision of the schema is given a revision-number and the upgrade script uses this to check if what is necessary to do, so it is a good practice to run this each time the plugin is updated. Run the script::
 
     polaric-dbupgrade
 
-It is possible to access the database from the psql shell. It can be useful for advanced users and developers to se more closely what is going on, perform various database queries and do maintenance tasks. 
-To start the database shell::
+It is also possible to access the database from the psql shell. It can be useful for advanced users and developers to see more what is going on, perform various database queries and do maintenance work and fix various issues. To start the database shell::
 
     su - postgres
     psql polaric
 
-The plugin does periodic maintenance tasks automatically, garbage collection, removing outdated data, etc.. 
+The plugin does some periodic maintenance tasks automatically: This includes doing garbage collection, removing outdated data, vacuuming, etc.. The database plugin has its own log file::
+
+    tail -f /var/log/polaric/database.log
 
 
 Configuration
