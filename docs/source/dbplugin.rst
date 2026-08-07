@@ -45,6 +45,12 @@ The plugin does some periodic maintenance tasks automatically: This includes doi
 Configuration
 -------------
 
-The plugin will put a config file database.ini in /etc/polaric-aprsd/config.d
-Edit it to suit your needs. The default file contains explanations for the settings. 
+The plugin will put a config file *'database.ini*' in *'/etc/polaric-aprsd/config.d'*
+Edit it to suit your needs. The default file contains explanations for the settings. Here you can: 
+
+* Define what APRS updates are saved in the database (based on channel and/or source-callsign
+* Define how long this data is stored. 
+* It is also possible to set shorter lifetimes for some packets or reports (based on SQL subexpressions). 
+
+Url and login for PostgreSQL database is defined here but you will probably not need to change that. The DbSync stuff (CRDT synchronisation between server instances) is still experimental. If you would like to do something here, don't hesitate to contact me.
 
