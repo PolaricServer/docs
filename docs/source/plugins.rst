@@ -1,7 +1,0 @@
-
-Plugin documentation
-********************
-
-.. toctree::
-
-   dbplugin
