@@ -4,10 +4,10 @@ Database Plugin
 The database plugin adds database storage using PostgreSQL (with PostGIS extension). It stores APRS 
 position-updates (spatiotemporal data), APRS packets and tag-settins for later queries and analysis. It is configurable 
 what packets are stored and for how long. Queries include historic movement trails, positions covered by digipeaters, etc. 
-With this plugin you can for example use the "time machine" to go to a specific time in history and generate a map-overlay showing the 
+With this plugin you can for example use the "*time machine*" to go to a specific time in history and generate a map-overlay showing the 
 situation at that time (for data that is stored). 
 
-The webapp2 client automatically detect if the database plugin is used and adds some functions if it is.
+The *webapp2* client automatically detect if the database plugin is used and adds some functions if it is.
  
 Client/user-owned data like trackers, static position objects, map-extents, map-layer setups, etc. can be stored
 and queried by client apps. For example, the drawing tool uses it to store features. The plugin provides a REST API which is `documented here <https://polaricserver.readthedocs.io/en/latest/restapi2.html>`_.
