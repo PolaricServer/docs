@@ -10,7 +10,7 @@ situation at that time (for data that is stored).
 The webapp2 client automatically detect if the database plugin is used and adds some functions if it is.
  
 Client/user-owned data like trackers, static position objects, map-extents, map-layer setups, etc. can be stored
-and queried by client apps. For example, the drawing tool uses it to store features. The plugin provides a REST API which is documented here: https://polaricserver.readthedocs.io/en/latest/restapi2.html
+and queried by client apps. For example, the drawing tool uses it to store features. The plugin provides a REST API which is `documented here:<https://polaricserver.readthedocs.io/en/latest/restapi2.html>`_
 
 The plugin also supports replication (between server-instances) with eventual consistency (CRDT) for 
 some data objects. This is rather experimental still though. 
