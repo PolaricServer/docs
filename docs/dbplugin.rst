@@ -13,7 +13,7 @@ Client/user-owned data like managed trackers, static position objects, map-exten
 and queried by client apps. For example, the drawing tool uses it to store features. The plugin provides a REST API which is `documented here <https://polaricserver.readthedocs.io/en/latest/restapi2.html>`_.
 
 The plugin also supports replication (between server-instances) with eventual consistency (CRDT) for 
-some data objects. This is rather experimental still though. 
+some data objects. This is rather experimental still though. Feel free to ask or to look into the source code. 
 
 Install
 -------
