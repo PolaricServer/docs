@@ -23,7 +23,7 @@ When the plugin is installed for the first time, the database components (Postgr
 
     polaric-dbsetup
 
-Then restart the aprsd (polaric-restar) to activate it. 
+Then restart the aprsd (polaric-restart) to activate it. 
 
 Maintenance
 -----------
