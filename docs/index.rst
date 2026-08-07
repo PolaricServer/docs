@@ -47,4 +47,5 @@ Contents
    concepts
    gettingstarted
    config
+   dbplugin
    interface
