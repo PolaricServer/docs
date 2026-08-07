@@ -1,11 +1,13 @@
 Database Plugin
 ===============
 
-The database plugin adds database storage using PostgreSQL (with PostGIS). It stores APRS 
-position-updates (spatiotemporal data) and APRS packets for later analysis. It is configurable what callsigns 
-are stored and for how long. Queries include movement trails, positions covered by digipeaters, etc. 
-With this plugin you can for example go to a speficic time in history and generate a map-overlay showing the 
+The database plugin adds database storage using PostgreSQL (with PostGIS extension). It stores APRS 
+position-updates (spatiotemporal data), APRS packets and tag-settins for later queries and analysis. It is configurable 
+what packets are stored and for how long. Queries include historic movement trails, positions covered by digipeaters, etc. 
+With this plugin you can for example use the "time machine" to go to a specific time in history and generate a map-overlay showing the 
 situation at that time (for data that is stored). 
+
+The webapp2 client automatically detect if the database plugin is used and adds some functions if it is.
  
 Client/user-owned data like trackers, static position objects, map-extents, map-layer setups, etc. can be stored
 and queried through a REST API. For example, the drawing tool uses it to store features. 
