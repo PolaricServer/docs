@@ -528,8 +528,6 @@ Users may upload images (typically from a smartphone app using a camera). Images
 
    Upload an image
    
-   :parameter string tag: Tag that denotes a type or category of object
-   
    :status 200: Ok
    :status 401: Authentication required.
    :status 400: Cannot parse input
