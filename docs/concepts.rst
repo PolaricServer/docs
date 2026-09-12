@@ -12,6 +12,7 @@ Software architecture overview
 *Polaric-Server* is a client/server application, where users run the client-app in their web-browsers or as smartphone apps. The figure below shows the most important parts of this. A server typically serves the *Polaric-Webapp2* (client) component which is mainly written in Javascript. It functions as a GIS client that can browse map-layers from various sources, let the user draw featurs on the map, etc. It is based on `OpenLayers <http://www.openlayers.org>`_. 
 
 .. image:: img/architecture1.jpg
+    :width: 80%
 
 *Polaric-Webapp2* sets up a (Apache) webserver to serve the application itself (as a kind of a homepage); we call it the *'frontend-server'*. It can also function as a *cache* for map-tiles for various sources by using Apache and the `Mapcache plugin <http://www.mapserver.org/mapcache>`_. Mapcache can handle standard map-tile sources like WMS, etc. The *Webapp2* client can use map-tile sources, but also vector sources like WFS, GPX, GeoJSON, etc. We can use the very rich capabilities of *OpenLayers* for this. 
 
@@ -82,6 +83,7 @@ There are three types if RF (radio) channels: (1) KISS TNC over serial, (2) KISS
 There are three types of internet channels: (1) One that can work as an *APRS-IS client* (connect to an external APRS-IS service), (2) one that can work as an *APRS-IS server* that external igates or APRS-clients can connect to. We also have (3) a special type of channel called a *router* that can be linked to several other channels each with a filter that defines what goes to each of them. Each channel also has a incoming-filter. Altogether, a router and associated channels can be set up to act as a kind of *firewall* for APRS-IS traffic. The figure below illustrates the idea.  
 
 .. image:: img/router.jpg 
+    :width: 60%
 
 
 
