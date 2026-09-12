@@ -49,13 +49,10 @@ When opening a websocket connection we can authenticate by adding the string *us
 
 
 
-Server-Server authentication
-============================
+Device (server-server) authentication
+=====================================
 
-A similar authentication scheme is used for other server instances needing to access REST APIs or Websocket interfaces. It could also be used for access from IoT devices. This authentication scheme doesn't identify web-browser users (typically persons) but rather services. In the current version, there is just one level of authorisation. 
-
-.. note::
-    This is supported from aprsd version 3.0.
+A similar authentication scheme is used for other server instances needing to access REST APIs or Websocket interfaces. It could also be used for access from IoT devices like the *Arctic Tracker*. This authentication scheme doesn't identify web-browser users (typically persons) but rather *services*. In the current version, there is just one level of authorisation. 
 
 
 HTTP requests and websockets
@@ -73,4 +70,4 @@ The secret key is derived (using HKDF2) from manually installed shared secrets s
 
 Where the service-name can be used to identify a particular REST API and/or websocket service. The secret is a sequence of characters and shouldn't be too short and it should be hard to guess by attackers. It can be a password/passphrase but a tip is to use a secure random function to generate it. 
 
-Currently there is one service using this sheme: The ``dbsync`` of the Database plugin. 
+Currently there are two services using this sheme: The ``dbsync`` and the ``arctic`` of the Database plugin. 
