@@ -1,0 +1,4 @@
+/* Make the container wider but keep a ceiling limit */
+.wy-nav-content {
+    max-width: 60em !important; 
+}

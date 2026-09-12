@@ -43,3 +43,11 @@ html_theme_options = {
     'logo_only': True,
     'display_version': False,
 }
+
+# Ensure the _static directory is registered
+html_static_path = ['_static']
+
+# Inject your custom CSS file into the built HTML
+html_css_files = [
+    'custom.css',
+]
