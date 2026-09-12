@@ -520,7 +520,11 @@ Users may upload images (typically from a smartphone camera).
 | `/photos/{id}/share`       | GET   |L| Get list of users the given image is shared with     |
 |                            +-------+-+------------------------------------------------------+
 |                            | POST  |L| Share image with an user (add to the share-list)     |
-+--------------------------- +-------+-+------------------------------------------------------+
++----------------------------+-------+-+------------------------------------------------------+
 | `/photos/{id}/share/{uid}` | DELETE|L| Remove a sharing of the image                        |
 +----------------------------+-------+-+------------------------------------------------------+
+
+
+
+
 
