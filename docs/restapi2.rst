@@ -542,6 +542,9 @@ Users may upload images (typically from a smartphone app using a camera). Images
    :<json double[] pos: Position where picture was taken
    :<json byte[] image: content
 
+   
+
+
 
 Tracklog API
 ------------
