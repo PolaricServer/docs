@@ -504,7 +504,7 @@ Photo API
 
 Source: PhotoApi.java
 
-Users may upload images (typically from a smartphone camera). 
+Users may upload images (typically from a smartphone app using a camera). Images are associated with positions so they can be displayed on the map.
 
 +----------------------------+-------+-+------------------------------------------------------+
 | `/photos`                  | POST  |L| Post an image to the system                          |          
@@ -521,10 +521,21 @@ Users may upload images (typically from a smartphone camera).
 |                            +-------+-+------------------------------------------------------+
 |                            | POST  |L| Share image with an user (add to the share-list)     |
 +----------------------------+-------+-+------------------------------------------------------+
-| `/photos/{id}/share/{uid}` | DELETE|L| Remove a sharing of the image                        |
+| `/photos/{id}/share/{uid}` | DELETE|L| Remove a sharing of the given image                  |
 +----------------------------+-------+-+------------------------------------------------------+
 
 
+Tracklog API
+------------
+
+Source TrackLogApi.java
+
+Trackers (Arctic Tracker) may upload track-logs with trails of position-updates. This is an IoT device, 
+and will require device authentication and authorisation.
+ 
++----------------------------+-------+-+------------------------------------------------------+
+| `/arctic/trklog`           | POST  |D| Post a list of position updates to the system        |          
++----------------------------+-------+-+------------------------------------------------------+
 
 
 
