@@ -6,7 +6,7 @@ This document summarises the RESTful API to the Polaric-aprsd backend server, pr
 
 The URL identifies the resource (or service) to be invoked. For REST APIs, the URL identifies the resource and the operation to be performed on it is determined by the HTTP method: GET (read object), PUT (update), POST (add, post), DELETE (remove it). Where a representation of the state is required or returned, the JSON format is used. Some operations that perform search expect query parameters.
 
-Most services will require authorization: O=open, L=login, S=SAR, A=admin.
+Most services will require authorization: O=open, L=login, S=SAR, A=admin, D=device
 
 See more info on `Client Authentication <https://polaricserver.readthedocs.io/en/latest/clientauth.html#client-authentication>`_. To access ‘L’, ‘S’ or ‘A’ services, requests must be authenticated. To access ‘O’ services, we do not use authentication.
 
@@ -523,6 +523,24 @@ Users may upload images (typically from a smartphone app using a camera). Images
 +----------------------------+-------+-+------------------------------------------------------+
 | `/photos/{id}/share/{uid}` | DELETE|L| Remove a sharing of the given image                  |
 +----------------------------+-------+-+------------------------------------------------------+
+
+.. http:post:: /photos
+
+   Upload an image
+   
+   :parameter string tag: Tag that denotes a type or category of object
+   
+   :status 200: Ok
+   :status 401: Authentication required.
+   :status 400: Cannot parse input
+   :status 500: If something went wrong with the database SQL query or if authorization info was not found.
+
+   :<json string id: Ident of the user
+   :<json Date time: When photo was taken   
+   :<json string userid: 
+   :<json string descr: Description of photo
+   :<json double[] pos: Position where picture was taken
+   :<json byte[] image: content
 
 
 Tracklog API
