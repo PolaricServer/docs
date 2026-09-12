@@ -499,5 +499,28 @@ The server does not interpret the content of raw objects (encoded in JSON). Clie
    :status 500: If something went wrong with the database SQL query or if authorization info was not found.
 
    
-   
-   
+Photo API
+----------
+
+Source: PhotoApi.java
+
+Users may upload images (typically from a smartphone camera). 
+
++----------------------------+-------+-+------------------------------------------------------+
+| `/photos`                  | POST  |L| Post an image to the system                          |          
++----------------------------+-------+-+------------------------------------------------------+
+| `/photos/{id}`             | GET   |L| Get image with the given id                          |
+|                            +-------+-+------------------------------------------------------+
+|                            | DELETE|L| Delete image with the given id                       |
++----------------------------+-------+-+------------------------------------------------------+
+| `/open/photos/{id}`        | GET   |O| Get image with the given id, open for all            |  
++----------------------------+-------+-+------------------------------------------------------+
+| `/photos/{id}/descr`       | PUT   |L| Update description of an image                       |  
++----------------------------+-------+-+------------------------------------------------------+
+| `/photos/{id}/share`       | GET   |L| Get list of users the given image is shared with     |
+|                            +-------+-+------------------------------------------------------+
+|                            | POST  |L| Share image with an user (add to the share-list)     |
++--------------------------- +-------+-+------------------------------------------------------+
+| `/photos/{id}/share/{uid}` | DELETE|L| Remove a sharing of the image                        |
++----------------------------+-------+-+------------------------------------------------------+
+
