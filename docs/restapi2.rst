@@ -531,7 +531,7 @@ Tracklog API
 Source TrackLogApi.java
 
 Trackers (Arctic Tracker) may upload track-logs with trails of position-updates. This is an IoT device, 
-and will require device authentication and authorisation.
+and will require device authentication and authorisation: The ``arctic`` service. 
  
 +----------------------------+-------+-+------------------------------------------------------+
 | `/arctic/trklog`           | POST  |D| Post a list of position updates to the system        |          
