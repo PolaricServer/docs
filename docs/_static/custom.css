@@ -2,3 +2,5 @@
 .wy-nav-content {
     max-width: 60em !important; 
 }
+
+table.docutils td {white-space: wrap !important}
