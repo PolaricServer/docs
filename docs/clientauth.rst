@@ -8,7 +8,7 @@ Clients (users) with web-browsers or mobile-apps, can log in to the server using
 After a successful login the client can call the ``GET`` method on the url ``authStatus`` which will return info on server capabilities and what authorizations the users have. If authentication fails, it returns an error code (401 unauthorized). If authentication fails, a ``GET`` on an alternative ``authStatus2`` can be used to get some information about the server-session anyway.  
 
 .. note::
-    This is supported from aprsd version 3.0. From version 4.2, the *binary* version of the key will be used in HMAC generation.
+    This authentication protocol was introduced in version 3.0. From version 4.2, the *binary* version of the key will be used in HMAC generation.
 
 
 Login using polaric-webapp2 client
@@ -64,7 +64,7 @@ HTTP(S) requests are authenticated the same way as for browser logins; an Author
 Secret Key
 ----------
 
-The secret key is derived (using HKDF2) from manually installed shared secrets servers participating, in the file ``/etc/polaric-aprsd/keys/peers``. Entries in this file are in the following format:: 
+The secret key is derived (using PBKDF2) from manually installed shared secrets servers participating, in the file ``/etc/polaric-aprsd/keys/peers``. Entries in this file are in the following format:: 
 
  service-name : secret
 
