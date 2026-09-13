@@ -550,11 +550,23 @@ Tracklog API
 Source TrackLogApi.java
 
 Trackers (Arctic Tracker) may upload track-logs with trails of position-updates. This is an IoT device, 
-and will require device authentication and authorisation: The ``arctic`` service. 
+and will require device authentication and authorisation: The ``arctic`` service is used on aprs.no. 
  
 +----------------------------+-------+-+------------------------------------------------------+
 | `/arctic/trklog`           | POST  |D| Post a list of position updates to the system        |          
 +----------------------------+-------+-+------------------------------------------------------+
+
+.. http:post:: /arctic/trklog
+
+   Upload a track-log. The uploaded log may be part of a trail to limit the message size and the method can be called multiple times.  
+   
+   :status 200: Ok
+   :status 401: Authentication required.
+   :status 400: Invalid message body
+   :status 500: If something went wrong with the database SQL query or other errors. 
+
+   :<json string call: Callsign for whom the trail is for
+   :<json LogItem[] pos: Array of log items (timestamp and position [lat, long]) 
 
 
 
