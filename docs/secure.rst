@@ -5,7 +5,7 @@ Secure communication with server
 The default setup is to use HTTPS between the client and the server and to use a frontend-webserver (Apache) as a *proxy* for the backend (with a proper URL prefix). HTTPS is handled by the frontend. The backend uses a separate port (default is port 8081). HTTPS is must be used for login-sessions to other servers than localhost. 
 
 .. note::
-    In version 4.2 the *backend* doesn't support HTTPS and the ``http.secure`` will have no other effect than announcing it over mDNS. The frontend should always be used if client use it from different machines than where the server runs. We may consider re-implementing HTTPS in the backend in later versions, if there is a specific need. 
+    In version 4.2 the *backend* doesn't support HTTPS and the ``httpserver.secure`` will have no other effect than announcing it over mDNS. The frontend should always be used if client use it from different machines than where the server runs. We may consider re-implementing HTTPS in the backend in later versions, if there is a specific need. 
 
 .. note:: 
     The frontend webserver is configured with a `self-signed <https://en.wikipedia.org/wiki/Self-signed_certificate>`_ 
