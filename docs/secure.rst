@@ -29,16 +29,9 @@ A `certificate <https://en.wikipedia.org/wiki/Public_key_certificate>`_ is mainl
 **Alternative 2** A certificate can also be created *manually*, either `self-signed <https://en.wikipedia.org/wiki/Self-signed_certificate>`_ or signed by a CA (typically by generating a CSR, sending it to a CA for signing), you can configure the frontend-server to use it. How to generate CSRs etc. is outside the scope of this document. Assume that you have the certificate and that it is stored in a file cert.pem and the private key is stored in a file privkey.pem it can be imported this way (make sure the private key is not password-protected and that the domain name of the certificate matches the real domain of your webserver).
 
 
-Activating HTTPS mode in aprsd
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When the certificate is imported, you can activate HTTPS mode by editing `/etc/polaric-aprsd/server.ini` and make sure that the ``httpserver.secure`` property is set to *true* and restart the server. 
-
-
 Configuring the client-side
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can tell the clients to use the backend directly with HTTPS mode by enabling the following lines and disabling AJAXPREFIX and WSPREFIX (comment out) in `/etc/polaric-webapp2/config.js`::
+For testing and development, you can tell the clients to use the backend directly with HTTPS mode by enabling the following lines and disabling AJAXPREFIX and WSPREFIX (comment out) in `/etc/polaric-webapp2/config.js`::
 
     PORT(8081)
-    SECURE(true)
