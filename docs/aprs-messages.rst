@@ -11,10 +11,10 @@ Authenticated APRS messages
 
 The format of a message is as follows::
 
- :<recipient><content>#<MAC>{<messsage-id>
+ :<recipient>:<content>#<MAC>{<messsage-id>
 
 **recipient** 
-    (as defined in the APRS standard), callsign of the recipient padded with spaces so that its length is excactly 10 characters.
+    (as defined in the APRS standard), callsign of the recipient padded with spaces so that its length is excactly 9 characters.
 
 **content**
     The message to be sent
@@ -36,7 +36,7 @@ For a reference implementation, see source code utils/AesGcmSivEncryption.java.
 
 The format of a message is as follows::
 
- :<recipient><content>{<messsage-id>
+ :<recipient>:<content>{<messsage-id>
 
 **recipient** 
     (as defined in the APRS standard), callsign of the recipient padded with spaces so that its length is excactly 10 characters.
